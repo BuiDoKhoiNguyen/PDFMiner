@@ -1,0 +1,29 @@
+
+
+spring:
+  elasticsearch:
+    uris: http://localhost:9200
+#    username: elastic
+#    password: 8U=YBy70CcBqjGmPw_vO
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  application:
+    name: PDFMiner
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pdfminer
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+aws:
+  s3:
+    bucket-name: s3pdfminer
+    region: ap-southeast-1
+  credentials:
+    access-key: AKIAZI2LCVHROGRQQQTI
+    secret-key: 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
