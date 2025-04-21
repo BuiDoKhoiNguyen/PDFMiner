@@ -5,71 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c151971e-6456-4353-8d22-35d5a4bbb44b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PDFMiner-backend/PDFMiner-backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/user-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/CustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/config/GatewayConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/util/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/DataInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/service/CustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/PdfMinerApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/config/CorsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/config/ElasticSearchConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/config/S3Config.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/controller/DocumentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/controller/S3FileController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/model/DocumentEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/repository/DocumentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/response/DocumentResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/response/DocumentSuggestResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/DocumentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/ESUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/S3Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/index/IndexInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/index/IndexService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/test/java/com/rs/pdfminer/PdfMinerApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/rs/authenticationservice/AuthenticationServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/test/java/com/rs/authenticationservice/AuthenticationServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/java/com/rs/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/java/com/rs/configserver/ConfigServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage-service/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +52,7 @@
     "Maven.storage-service [clean].executor": "Run",
     "Maven.user-service [clean].executor": "Run",
     "Maven.user-service [validate].executor": "Run",
-    "Python.document-processing-service.executor": "Debug",
+    "Python.document-processing-service.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -176,7 +113,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Python.document-processing-service">
+  <component name="RunManager">
     <configuration name="document-processing-service" type="PythonConfigurationType" factoryName="Python">
       <module name="PDFMiner-microservice" />
       <option name="ENV_FILES" value="/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12" />
@@ -229,14 +166,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PdfMinerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="PDFMiner-backend" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.pdfminer.PdfMinerApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StorageServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="storage-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.storageservice.StorageServiceApplication" />
@@ -259,7 +188,6 @@
       <item itemvalue="Spring Boot.UserServiceApplication" />
       <item itemvalue="Spring Boot.DocumentServiceApplication" />
       <item itemvalue="Spring Boot.StorageServiceApplication" />
-      <item itemvalue="Spring Boot.PdfMinerApplication" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -307,7 +235,7 @@
       <workItem from="1744215908369" duration="7218000" />
       <workItem from="1744268226321" duration="9851000" />
       <workItem from="1745161964372" duration="26653000" />
-      <workItem from="1745221475657" duration="5228000" />
+      <workItem from="1745221475657" duration="5490000" />
     </task>
     <servers />
   </component>
