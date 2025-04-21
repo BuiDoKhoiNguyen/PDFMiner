@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: storage-service
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 8084
+      
+# AWS S3 Configuration
+aws:
+  s3:
+    bucket-name: s3pdfminer
+    region: ap-southeast-1
+  credentials:
+    access-key: AKIAZI2LCVHROGRQQQTI
+    secret-key: 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

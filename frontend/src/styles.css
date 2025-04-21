@@ -1,0 +1,34 @@
+.search-container {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.document-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.upload-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-page {
+  min-height: 70vh;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.document-list .card {
+  animation: fadeIn 0.5s ease-in;
+  transition: transform 0.3s;
+  border-left: 4px solid #007bff;
+}
+
+.document-list .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}

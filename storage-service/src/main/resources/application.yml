@@ -1,0 +1,43 @@
+# server:
+#   port: 8084
+  
+# spring:
+#   application:
+#     name: storage-service
+#   servlet:
+#     multipart:
+#       max-file-size: 50MB
+#       max-request-size: 50MB
+      
+# # AWS S3 Configuration
+# aws:
+#   credentials:
+#     access-key: ${AWS_ACCESS_KEY:your-access-key}
+#     secret-key: ${AWS_SECRET_KEY:your-secret-key}
+#   s3:
+#     region: ${AWS_REGION:ap-southeast-1}
+#     bucket-name: ${AWS_BUCKET_NAME:pdfminer-documents}
+      
+# # JWT Configuration
+# jwt:
+#   secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  
+# # Eureka Client Configuration
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: http://localhost:8761/eureka/
+#   instance:
+#     preferIpAddress: true
+
+server:
+  port: 8083
+spring:
+  application:
+    name: storage-service
+  config:
+    import: configserver:http://localhost:8888
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true

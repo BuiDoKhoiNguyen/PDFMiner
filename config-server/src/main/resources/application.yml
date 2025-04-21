@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8888
 
 spring:
   application:
@@ -11,3 +11,8 @@ spring:
       server:
         native:
           search-locations: file:./config
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

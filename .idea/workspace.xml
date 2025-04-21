@@ -4,7 +4,73 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c151971e-6456-4353-8d22-35d5a4bbb44b" name="Changes" comment="" />
+    <list default="true" id="c151971e-6456-4353-8d22-35d5a4bbb44b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PDFMiner-backend/PDFMiner-backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/user-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/config/GatewayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/filter/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/util/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/DataInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/PdfMinerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/config/ElasticSearchConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/config/S3Config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/controller/DocumentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/controller/S3FileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/model/DocumentEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/repository/DocumentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/response/DocumentResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/response/DocumentSuggestResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/DocumentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/ESUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/S3Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/index/IndexInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/java/com/rs/pdfminer/service/index/IndexService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PDFMiner-backend/src/test/java/com/rs/pdfminer/PdfMinerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/com/rs/authenticationservice/AuthenticationServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/test/java/com/rs/authenticationservice/AuthenticationServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/java/com/rs/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/java/com/rs/configserver/ConfigServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +79,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -28,13 +95,12 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2u2e5MTT6n59Z16S53xM8gw1bVh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,17 +108,29 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.PDFMiner [clean].executor": "Run",
-    "Python.document-processing-service.executor": "Run",
+    "Maven.config-server [clean].executor": "Run",
+    "Maven.document-service [clean].executor": "Run",
+    "Maven.eureka-server [clean].executor": "Run",
+    "Maven.gateway [clean].executor": "Run",
+    "Maven.storage-service [clean].executor": "Run",
+    "Maven.user-service [clean].executor": "Run",
+    "Maven.user-service [validate].executor": "Run",
+    "Python.document-processing-service.executor": "Debug",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AuthenticationServiceApplication.executor": "Debug",
     "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.DocumentServiceApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
     "Spring Boot.PdfMinerApplication.executor": "Run",
+    "Spring Boot.StorageServiceApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -64,11 +142,12 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
+      "mongo",
       "postgresql"
     ]
   }
@@ -81,12 +160,17 @@
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.rs.gateway.util" />
+      <recent name="com.rs.gateway.filter" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
         <option value="KtorApplicationConfigurationType" />
         <option value="MicronautRunConfigurationType" />
+        <option value="PythonConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
@@ -117,19 +201,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="AuthenticationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="authentication-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.authenticationservice.AuthenticationServiceApplication" />
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.configserver.ConfigServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="config-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.configserver.ConfigServerApplication" />
+    <configuration name="DocumentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="document-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.documentservice.DocumentServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,20 +253,20 @@
     </configuration>
     <list>
       <item itemvalue="Python.document-processing-service" />
-      <item itemvalue="Spring Boot.StorageServiceApplication" />
-      <item itemvalue="Spring Boot.UserServiceApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
-      <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="Spring Boot.AuthenticationServiceApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.UserServiceApplication" />
+      <item itemvalue="Spring Boot.DocumentServiceApplication" />
+      <item itemvalue="Spring Boot.StorageServiceApplication" />
       <item itemvalue="Spring Boot.PdfMinerApplication" />
     </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.153" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.153" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
   </component>
@@ -224,12 +305,44 @@
       <workItem from="1744210916577" duration="8000" />
       <workItem from="1744210941240" duration="3919000" />
       <workItem from="1744215908369" duration="7218000" />
-      <workItem from="1744268226321" duration="3016000" />
+      <workItem from="1744268226321" duration="9851000" />
+      <workItem from="1745161964372" duration="26653000" />
+      <workItem from="1745221475657" duration="5228000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/PDFMiner-backend" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/filter/JwtAuthenticationFilter.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/config/GatewayConfig.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/JwtAuthenticationFilter.java</url>
+          <line>25</line>
+          <properties class="com.rs.documentservice.config.JwtAuthenticationFilter" method="doFilterInternal">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
