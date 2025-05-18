@@ -1,13 +1,18 @@
 from fastapi import FastAPI, File, UploadFile
 import boto3
-import pypdf
 import os
-import pytesseract
+import cv2
+from PIL import Image
 from pdf2image import convert_from_path
 from dotenv import load_dotenv
 from gemini_nomalizer import normalize_document_data
 from datetime import datetime
-# uvicorn server:app --reload
+
+from vietocr.vietocr.tool.predictor import Predictor
+from vietocr.vietocr.tool.config import Cfg
+from PaddleOCR import PaddleOCR
+
+# python -m uvicorn server:app --reload
 load_dotenv()
 
 app = FastAPI()
@@ -25,7 +30,20 @@ if AWS_ACCESS_KEY and AWS_SECRET_KEY:
         aws_secret_access_key=AWS_SECRET_KEY,
         region_name=S3_REGION
     )
+
+def init_models():
+    config = Cfg.load_config_from_name('vgg_transformer')
+    config['cnn']['pretrained'] = True
+    config['predictor']['beamsearch'] = True
+    config['device'] = 'mps' 
+    recognitor = Predictor(config)
+
+    detector = PaddleOCR(use_angle_cls=False, lang="vi", use_gpu=False)
     
+    return recognitor, detector
+
+recognitor, detector = init_models()
+
 def truncate_text_for_gemini(text, max_chars=15000):
     if len(text) <= max_chars:
         return text
@@ -35,32 +53,69 @@ def truncate_text_for_gemini(text, max_chars=15000):
     
     return first_part + "\n\n[...Nội dung ở giữa được cắt bỏ...]\n\n" + last_part
 
-def extract_text_from_pdf(pdf_path):
-    text = ""
-    try:
-        with open(pdf_path, "rb") as f:
-            reader = pypdf.PdfReader(f)
-            for page in reader.pages:
-                page_text = page.extract_text() or ""
-                text += page_text + "\n"
-    except Exception as e:
-        print(f"Lỗi khi đọc PDF với pypdf: {str(e)}")
-    
-    if len(text.strip()) < 100:
-        try:
-            images = convert_from_path(pdf_path)
-            
-            text = ""
-            for i, image in enumerate(images):
-                page_text = pytesseract.image_to_string(image, lang='vie+eng')
-                text += f"--- Trang {i+1} ---\n{page_text}\n\n"
-        except Exception as e:
-            print(f"Lỗi khi thực hiện OCR: {str(e)}")
-            return "Không thể trích xuất văn bản từ file PDF này."
-    
-    return text.strip()
+def predict(img_path, padding=4):
+    # Load image
+    img = cv2.imread(img_path)
 
-@app.post("/upload/")
+    # Text detection
+    result = detector.ocr(img_path, cls=False, det=True, rec=False)
+    result = result[:][:][0]
+
+    # Filter Boxes
+    boxes = []
+    for line in result:
+        boxes.append([[int(line[0][0]), int(line[0][1])], [int(line[2][0]), int(line[2][1])]])
+    boxes = boxes[::-1]
+
+    # Add padding to boxes
+    padding = 4
+    for box in boxes:
+        box[0][0] = box[0][0] - padding
+        box[0][1] = box[0][1] - padding
+        box[1][0] = box[1][0] + padding
+        box[1][1] = box[1][1] + padding
+
+    # Text recognizion
+    texts = []
+    for box in boxes:
+        cropped_image = img[box[0][1]:box[1][1], box[0][0]:box[1][0]]
+        try:
+            cropped_image = Image.fromarray(cropped_image)
+        except:
+            continue
+
+        rec_result = recognitor.predict(cropped_image)
+
+        text = rec_result
+
+        texts.append(text)
+    return texts
+
+def extract_text_from_pdf(pdf_path):
+    try:
+        images = convert_from_path(pdf_path, dpi=400)
+        
+        full_text = ""
+        for i, image in enumerate(images):
+            temp_img_path = f"/tmp/page_{i}.png"
+            image.save(temp_img_path, "PNG")
+            
+            page_text =predict(temp_img_path)
+            
+            full_text += f"--- Trang {i+1} ---\n{page_text}\n\n"
+            os.remove(temp_img_path)
+
+        if not full_text.strip():
+            return "Không thể trích xuất văn bản từ file PDF này."
+
+        return full_text.strip()
+
+    except Exception as e:
+        print(f"Lỗi khi xử lý PDF: {str(e)}")
+        return "Không thể xử lý file PDF này."
+    
+
+@app.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
     file_path = f"/tmp/{file.filename}"
     
@@ -69,7 +124,6 @@ async def upload_file(file: UploadFile = File(...)):
     
     try:
         extracted_text = extract_text_from_pdf(file_path)
-
         extracted_text = truncate_text_for_gemini(extracted_text)
         
         s3_client.upload_file(file_path, S3_BUCKET_NAME, file.filename)
