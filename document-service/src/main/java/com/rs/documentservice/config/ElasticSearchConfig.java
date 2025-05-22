@@ -3,6 +3,8 @@ package com.rs.documentservice.config;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.json.jackson.JacksonJsonpMapper;
 import co.elastic.clients.transport.rest_client.RestClientTransport;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.NonNull;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
@@ -30,7 +32,9 @@ public class ElasticSearchConfig extends ElasticsearchConfiguration {
         ).build();
 
         RestClientTransport transport = new RestClientTransport(
-                restClient, new JacksonJsonpMapper());
+                restClient,
+                new JacksonJsonpMapper()
+        );
 
         return new ElasticsearchClient(transport);
     }

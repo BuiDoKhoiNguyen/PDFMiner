@@ -7,12 +7,30 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: pdfminer-document-service
+      auto-offset-reset: earliest
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.value.default.type: java.util.HashMap
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 server:
   port: 8083
 
 document-process:
   url: http://localhost:8000/upload/
+
+storage-service:
+  url: http://localhost:8084
 
 jwt:
   secret-key: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437

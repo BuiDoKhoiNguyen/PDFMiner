@@ -6,8 +6,15 @@ import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface DocumentRepository extends ElasticsearchRepository<Document, String> {
+
+    Optional<Document> findDocumentByDocumentId(String documentId);
+    
+    @Query("{\"match_all\": {}}")
+    List<Document> findAll();
+    
     @Query("{\"bool\": {\"should\": ["
             + "{\"match\": {\"documentNumber\": \"?0\"}},"
             + "{\"match\": {\"content\": \"?0\"}},"
@@ -22,9 +29,9 @@ public interface DocumentRepository extends ElasticsearchRepository<Document, St
             + "]}}")
     List<Document> searchDocuments(String keyword);
 
-    Document getDocumentEntityById(String id);
+    Document getDocumentEntityByDocumentId(String id);
 
-    void deleteDocumentEntityById(String id);
+    void deleteDocumentEntityByDocumentId(String id);
 
     @Query("{\"match\": {\"searchText\": {\"query\": \"?0\", \"fuzziness\": \"AUTO\"}}}")
     List<Document> findBySearchTextContaining(String query, Pageable pageable);

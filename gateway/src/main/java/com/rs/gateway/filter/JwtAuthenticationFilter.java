@@ -25,6 +25,11 @@ public class JwtAuthenticationFilter implements GatewayFilter {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
 
+        // Allow preflight (OPTIONS) requests to pass through without authentication
+        if (request.getMethod() != null && request.getMethod().name().equalsIgnoreCase("OPTIONS")) {
+            return chain.filter(exchange);
+        }
+
         final List<String> apiEndpoints = List.of("/api/auth/login", "/api/auth/register", "/eureka");
 
         Predicate<ServerHttpRequest> isApiSecured = r -> apiEndpoints.stream()

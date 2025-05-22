@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -46,24 +48,8 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-//    @Bean
-//    public WebSecurityCustomizer webSecurityCustomizer() {
-//        return (web) -> web.ignoring().antMatchers(
-//                "/swagger-resources/**",
-//                "/swagger-ui.html/**",
-//                "/swagger-resources/**",
-//                "/swagger-ui/**",
-//                "/v3/api-docs/**");
-//    }
-
     @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(@NonNull CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedMethods("*");
-            }
-        };
+    public UserDetailsService userDetailsService() {
+        return new InMemoryUserDetailsManager();
     }
 }

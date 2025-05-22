@@ -5,8 +5,115 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c151971e-6456-4353-8d22-35d5a4bbb44b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/service/JwtService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/document-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/document-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/storage-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/storage-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/user-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/user-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/OcrToTableTool.py" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/OcrToTableTool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/TableCellExtractor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/detectable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/21_2020_TT_BGDDT.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/57-2017-NĐ-CP.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/CV 43 BCĐ18.signed.signed.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Cong_van_6666_BYT_TM_file_pdf_5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Dai_tuong_Vo_Nguyen_Giap.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Hien_Phap_2013.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Văn bản hợp nhất số 02.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/_data_soytehcm_vanphongso_attachments_2021_3_222btp_4320219.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/_data_soytehcm_vanphongso_attachments_2021_3_81qdttg190120211signed_4320218.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/tt3838_169_2011_TT-BTC.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/tt5239_ND35CP.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/tt5368_138_2013_ND-CP.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Đơn-xin-cấp-học-bổng-STF_PPT.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/layoutparser-0.0.0-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/det/inference.pdiparams" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/det/inference.pdiparams.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/det/inference.pdmodel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/rec/inference.pdiparams" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/rec/inference.pdiparams.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/rec/inference.pdmodel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/table-detection-and-extraction.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/table_detector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/models/text_recognizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_0_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_0_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_0_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_0_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_2_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_3_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_5_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_6_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_6_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_7_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_7_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_8_0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/opencv_extract_table.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/pdf_to_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/predict.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/predict.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/table_creator/data_structures.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/table_creator/table_extractor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/table_creator/visualization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/table_extraction_demo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/table_extraction_demo.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/table_ocr_processor.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/ElasticSearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/ElasticSearchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/controller/DocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/model/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/model/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/repository/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/repository/DocumentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/DocumentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/DocumentList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/DocumentUpload.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/filter/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/service/S3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/service/S3Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,53 +149,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.PDFMiner [clean].executor": "Run",
-    "Maven.config-server [clean].executor": "Run",
-    "Maven.document-service [clean].executor": "Run",
-    "Maven.eureka-server [clean].executor": "Run",
-    "Maven.gateway [clean].executor": "Run",
-    "Maven.storage-service [clean].executor": "Run",
-    "Maven.user-service [clean].executor": "Run",
-    "Maven.user-service [validate].executor": "Run",
-    "Python.document-processing-service.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AuthenticationServiceApplication.executor": "Debug",
-    "Spring Boot.ConfigServerApplication.executor": "Run",
-    "Spring Boot.DocumentServiceApplication.executor": "Run",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.GatewayApplication.executor": "Run",
-    "Spring Boot.PdfMinerApplication.executor": "Run",
-    "Spring Boot.StorageServiceApplication.executor": "Run",
-    "Spring Boot.UserServiceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.PDFMiner [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.config-server [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.document-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.eureka-server [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gateway [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.storage-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.user-service [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Python.document-processing-service.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthenticationServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DocumentServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PdfMinerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StorageServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/buidokhoinguyen/Desktop/PDFMiner-microservice/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mongo",
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;,
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -113,7 +221,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.document-processing-service">
     <configuration name="document-processing-service" type="PythonConfigurationType" factoryName="Python">
       <module name="PDFMiner-microservice" />
       <option name="ENV_FILES" value="/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12" />
@@ -182,8 +290,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.document-processing-service" />
-      <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication" />
       <item itemvalue="Spring Boot.DocumentServiceApplication" />
@@ -236,6 +344,10 @@
       <workItem from="1744268226321" duration="9851000" />
       <workItem from="1745161964372" duration="26653000" />
       <workItem from="1745221475657" duration="5490000" />
+      <workItem from="1745571671462" duration="33000" />
+      <workItem from="1746890785028" duration="8000" />
+      <workItem from="1747756638607" duration="38920000" />
+      <workItem from="1747894114663" duration="12065000" />
     </task>
     <servers />
   </component>
@@ -246,31 +358,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/PDFMiner-backend" />
     </ignored-roots>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/filter/JwtAuthenticationFilter.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/config/GatewayConfig.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/JwtAuthenticationFilter.java</url>
-          <line>25</line>
-          <properties class="com.rs.documentservice.config.JwtAuthenticationFilter" method="doFilterInternal">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

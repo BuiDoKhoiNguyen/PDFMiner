@@ -23,7 +23,18 @@ public class JwtService {
     @Value("${jwt.secret-key}")
     private String secretKey;
 
+    private String token;
+
+    void setToken(String token) {
+        this.token = token;
+    }
+
+    String getToken() {
+        return token;
+    }
+
     public String extractUsername(String token) {
+        setToken(token);
         return extractClaim(token, Claims::getSubject);
     }
 

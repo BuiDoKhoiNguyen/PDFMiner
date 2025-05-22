@@ -1,0 +1,20 @@
+Cell 0: STT
+Cell 1: Chủng loại hàng hóa
+Cell 2: Số lượng
+Cell 3: xứ Xuất
+Cell 4: VNĐ Đơn giá
+Cell 5: VNĐ Thành tiền
+Cell 6: ĐVT
+Cell 7: Tổng
+Cell 8: 1
+Cell 9: kẽm nhúng nóng) (Kiểu kín, sứ plugin, vỏ mạnh 151500kVA-22/0,4kV AMBA Amorphouse
+Cell 10: Máy
+Cell 11: 1
+Cell 12: LE
+Cell 13: 720,000,000
+Cell 14: 1720,000,000
+Cell 15: Thuế VAT (8%):
+Cell 16: 57,600,000
+Cell 17: Tổng tiền hàng:
+Cell 18: 777,600,000
+Cell 19: (Bằng chữ: Bảy trăm bảy mươi bảy triệu, sáu trăm nghìn đồng.).

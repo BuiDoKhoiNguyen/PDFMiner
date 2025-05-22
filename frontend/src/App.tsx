@@ -1,67 +1,166 @@
-// src/App.tsx
-import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import DocumentList from './components/DocumentList';
-import DocumentUpload from './components/DocumentUpload';
-import api from './services/api';
-import { DocumentEntity } from './types';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 
-const App: React.FC = () => {
-  const [searchResults, setSearchResults] = useState<DocumentEntity[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [hasSearched, setHasSearched] = useState<boolean>(false);
+// Layout
+import { Layout } from './components/Layout';
 
-  const handleSearch = async (keyword: string) => {
-    setIsLoading(true);
-    setHasSearched(true);
-    
-    try {
-      const results = await api.searchDocuments(keyword);
-      setSearchResults(results);
-    } catch (error) {
-      console.error('Lỗi khi tìm kiếm:', error);
-      setSearchResults([]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+// Pages
+import { Home } from './pages/Home';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+import { Dashboard } from './pages/Dashboard';
+import { Documents } from './pages/Documents';
+import { DocumentDetail } from './pages/DocumentDetail';
+import { Upload } from './pages/Upload';
+import { Search } from './pages/Search';
+import { Profile } from './pages/Profile';
+import { AdminPanel } from './pages/AdminPanel';
 
-  return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Container className="py-4">
-          <Routes>
-            <Route path="/" element={
-              <>
-                <div className="search-page">
-                  <h1 className="text-center mb-4">Tìm kiếm công văn</h1>
-                  <SearchBar onSearch={handleSearch} />
-                  
-                  {isLoading ? (
-                    <div className="text-center my-5">
-                      <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Đang tải...</span>
-                      </div>
-                    </div>
-                  ) : (
-                    hasSearched && <DocumentList documents={searchResults} />
-                  )}
-                </div>
-              </>
-            } />
-            <Route path="/upload" element={<DocumentUpload />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </Container>
-      </div>
-    </Router>
-  );
+// Create a query client for React Query
+const queryClient = new QueryClient();
+
+// Create a custom theme
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+    background: {
+      default: '#f5f5f5',
+    },
+  },
+  typography: {
+    fontFamily: [
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          borderRadius: 8,
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+        },
+      },
+    },
+  },
+});
+
+// Protected route component
+const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+  const { isAuthenticated, isLoading } = useAuth();
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
+  
+  return children;
 };
 
-export default App;
+// Admin route component
+const AdminRoute = ({ children }: { children: JSX.Element }) => {
+  const { user, isLoading } = useAuth();
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  
+  if (!user || user.role !== 'ADMIN') {
+    return <Navigate to="/dashboard" />;
+  }
+  
+  return children;
+};
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                {/* Public routes */}
+                <Route index element={<Home />} />
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+                
+                {/* Protected routes */}
+                <Route path="dashboard" element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                } />
+                <Route path="documents" element={
+                  <ProtectedRoute>
+                    <Documents />
+                  </ProtectedRoute>
+                } />
+                <Route path="documents/:id" element={
+                  <ProtectedRoute>
+                    <DocumentDetail />
+                  </ProtectedRoute>
+                } />
+                <Route path="upload" element={
+                  <ProtectedRoute>
+                    <Upload />
+                  </ProtectedRoute>
+                } />
+                <Route path="search" element={
+                  <ProtectedRoute>
+                    <Search />
+                  </ProtectedRoute>
+                } />
+                <Route path="profile" element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                } />
+                
+                {/* Admin routes */}
+                <Route path="admin" element={
+                  <AdminRoute>
+                    <AdminPanel />
+                  </AdminRoute>
+                } />
+                
+                {/* Catch all route */}
+                <Route path="*" element={<Navigate to="/" />} />
+              </Route>
+            </Routes>
+          </Router>
+        </AuthProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
+  );
+}
+
+export default App

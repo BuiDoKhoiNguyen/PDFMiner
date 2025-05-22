@@ -6,6 +6,19 @@ spring:
     mongodb:
       uri: mongodb+srv://faker05122004:05122004@cluster0.mtqupom.mongodb.net/pdfminer-users?retryWrites=true&w=majority&appName=Cluster0
       auto-index-creation: true
+      
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: pdfminer-user-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 jwt:
   secret-key: 5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437

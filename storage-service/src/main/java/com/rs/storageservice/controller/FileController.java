@@ -2,6 +2,9 @@ package com.rs.storageservice.controller;
 
 import com.rs.storageservice.service.S3Service;
 import lombok.RequiredArgsConstructor;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -11,24 +14,36 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/files")
 @RequiredArgsConstructor
 public class FileController {
 
-    private final S3Service s3Service;
+    private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
+    private final S3Service s3Service;
+    
     @PostMapping("/upload")
     @PreAuthorize("hasAuthority('DOCUMENT_CREATE')")
-    public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
-        String fileUrl = s3Service.uploadFile(file);
-        return ResponseEntity.ok(Map.of(
-            "url", fileUrl,
-            "filename", file.getOriginalFilename(),
-            "message", "File uploaded successfully"
-        ));
+    public ResponseEntity<Map<String, Object>> uploadFile(@RequestParam("file") MultipartFile file) {
+        try {
+            // Generate a unique document ID for Kafka processing
+            String documentId = UUID.randomUUID().toString();
+            
+            Map<String, Object> result = s3Service.uploadFile(file, documentId);
+              
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            logger.error("Error uploading file: {}", e.getMessage(), e);
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("error", "Failed to upload file: " + e.getMessage());
+            errorResponse.put("fileName", file.getOriginalFilename());
+            return ResponseEntity.badRequest().body(errorResponse);
+        }
     }
 
     @GetMapping("/download/{key}")

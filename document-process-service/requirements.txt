@@ -29,6 +29,7 @@ debugpy==1.8.14
 decorator==5.2.1
 dill==0.3.4
 dotenv==0.9.9
+kafka-python==2.0.2
 einops==0.2.0
 exceptiongroup==1.2.2
 executing==2.2.0
@@ -42,6 +43,7 @@ frozenlist==1.6.0
 fsspec==2025.3.0
 future==1.0.0
 gdown==5.2.0
+confluent-kafka==2.4.0
 google-ai-generativelanguage==0.6.15
 google-api-core==2.25.0rc0
 google-api-python-client==2.169.0

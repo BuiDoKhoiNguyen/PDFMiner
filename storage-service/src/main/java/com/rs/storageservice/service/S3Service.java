@@ -8,13 +8,14 @@ import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
-import software.amazon.awssdk.services.s3.model.PutObjectResponse;
 import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -27,18 +28,16 @@ public class S3Service {
     @Value("${aws.s3.bucket-name}")
     private String bucketName;
 
-    public String uploadFile(MultipartFile file) throws IOException {
+    public Map<String, Object> uploadFile(MultipartFile file, String documentId) throws IOException {
         String originalFilename = file.getOriginalFilename();
         String fileExtension = "";
+
         if (originalFilename != null && originalFilename.contains(".")) {
             fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
         }
-        
-        // Tạo một key duy nhất để tránh trùng lặp
-        String key = UUID.randomUUID().toString() + fileExtension;
-        if (originalFilename != null) {
-            key = originalFilename.substring(0, originalFilename.lastIndexOf(".")) + "_" + key;
-        }
+
+        // Key S3 = documentId + fileExtension (ví dụ: 123e4567-e89b-12d3-a456-426614174000.pdf)
+        String key = documentId + fileExtension;
         
         Path tempFile = Files.createTempFile(null, null);
         file.transferTo(tempFile.toFile());
@@ -51,7 +50,14 @@ public class S3Service {
         s3Client.putObject(putObjectRequest, Paths.get(tempFile.toString()));
         Files.delete(tempFile);
         
-        return String.format("https://%s.s3.amazonaws.com/%s", bucketName, key);
+        String fileUrl = String.format("https://%s.s3.amazonaws.com/%s", bucketName, key);
+        Map<String, Object> newFile = new HashMap<>();
+        newFile.put("documentId", documentId);
+        newFile.put("fileUrl", fileUrl);
+        
+        log.info("File uploaded to S3: {}", fileUrl);
+
+        return newFile;
     }
 
     public byte[] downloadFile(String key) {

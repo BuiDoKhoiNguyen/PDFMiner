@@ -1,9 +1,15 @@
 package com.rs.documentservice.controller;
 
+import com.rs.documentservice.dto.DocumentDataDto;
 import com.rs.documentservice.dto.DocumentSuggestResponse;
 import com.rs.documentservice.model.Document;
+import com.rs.documentservice.repository.DocumentRepository;
 import com.rs.documentservice.service.DocumentService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -18,30 +24,39 @@ import java.util.Map;
 @RequestMapping("/api/documents")
 public class DocumentController {
 
+    private static final Logger logger = LoggerFactory.getLogger(DocumentController.class);
+
     @Autowired
     private DocumentService documentService;
+    
+    @Autowired
+    private DocumentRepository documentRepository;
 
-    @GetMapping
-    @PreAuthorize("hasAuthority('DOCUMENT_READ')")
-    public ResponseEntity<Map<String, String>> getAllDocuments() {
-        Map<String, String> response = new HashMap<>();
-        response.put("status", "success");
-        response.put("message", "Danh sách tài liệu được truy cập bởi người dùng có quyền DOCUMENT_READ");
-        return ResponseEntity.ok(response);
-    }
+    @Value("${storage-service.url}")
+    private String storageServiceUrl;
 
-    @PostMapping
-    @PreAuthorize("hasAuthority('DOCUMENT_CREATE')")
-    public ResponseEntity<Map<String, String>> createDocument() {
-        Map<String, String> response = new HashMap<>();
-        response.put("status", "success");
-        response.put("message", "Tài liệu được tạo bởi người dùng có quyền DOCUMENT_CREATE");
-        return ResponseEntity.ok(response);
-    }
+  @GetMapping
+  @PreAuthorize("hasAuthority('DOCUMENT_READ')")
+  public ResponseEntity<?> getAllDocuments() {
+      logger.info("Fetching all documents");
+      
+      try {
+          List<Document> documents = documentService.findAll();
+          return ResponseEntity.ok(documents);
+      } catch (Exception e) {
+          logger.error("Error fetching documents", e);
+          Map<String, String> errorResponse = new HashMap<>();
+          errorResponse.put("status", "error");
+          errorResponse.put("message", "Không thể tải danh sách tài liệu: " + e.getMessage());
+          return ResponseEntity.status(500).body(errorResponse);
+      }
+  }
+
 
     @PutMapping("/{id}")
     @PreAuthorize("hasAuthority('DOCUMENT_UPDATE')")
     public ResponseEntity<Map<String, String>> updateDocument(@PathVariable String id) {
+        logger.info("Updating document with id: {}", id);
         Map<String, String> response = new HashMap<>();
         response.put("status", "success");
         response.put("message", "Tài liệu " + id + " được cập nhật bởi người dùng có quyền DOCUMENT_UPDATE");
@@ -51,50 +66,85 @@ public class DocumentController {
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('DOCUMENT_DELETE')")
     public ResponseEntity<Void> deleteDocument(@PathVariable String id) {
+        logger.info("Deleting document with id: {}", id);
         documentService.deleteDocument(id);
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/{id}/approve")
-    @PreAuthorize("hasAuthority('DOCUMENT_APPROVE')")
-    public ResponseEntity<Map<String, String>> approveDocument(@PathVariable String id) {
-        Map<String, String> response = new HashMap<>();
-        response.put("status", "success");
-        response.put("message", "Tài liệu " + id + " được phê duyệt bởi người dùng có quyền DOCUMENT_APPROVE");
-        return ResponseEntity.ok(response);
-    }
-
-    @GetMapping("/{id}/download")
-    @PreAuthorize("hasAuthority('DOCUMENT_DOWNLOAD')")
-    public ResponseEntity<Map<String, String>> downloadDocument(@PathVariable String id) {
-        Map<String, String> response = new HashMap<>();
-        response.put("status", "success");
-        response.put("message", "Tài liệu " + id + " được tải xuống bởi người dùng có quyền DOCUMENT_DOWNLOAD");
-        return ResponseEntity.ok(response);
-    }
 
     @GetMapping("/search")
     @PreAuthorize("hasAuthority('DOCUMENT_SEARCH')")
     public List<Document> searchDocuments(@RequestParam String keyword) {
+        logger.info("Searching documents with keyword: {}", keyword);
         return documentService.searchDocuments(keyword);
     }
 
+    /**
+     * Upload a document and process asynchronously via Kafka
+     * 
+     * @param file The document file to upload
+     * @return Processing status
+     */
     @PostMapping("/upload")
     @PreAuthorize("hasAuthority('DOCUMENT_CREATE')")
-    public ResponseEntity<Document> uploadDocument(@RequestParam("file") MultipartFile file) {
-        Map<String, Object> extractedData = documentService.processDocument(file);
-        Document document = documentService.saveDocument(extractedData);
-        return ResponseEntity.ok(document);
+    public ResponseEntity<?> uploadDocument(@RequestParam("file") MultipartFile file) {
+        try {
+            logger.info("Uploading document asynchronously: {}", file.getOriginalFilename());
+
+            Map<String, Object> result = documentService.uploadDocumentWithKafka(file);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            logger.error("Error uploading document", e);
+            return ResponseEntity.badRequest().body(Map.of(
+                    "error", "Failed to upload document: " + e.getMessage(),
+                    "fileName", file.getOriginalFilename()
+            ));
+        }
     }
 
     @GetMapping("/suggest")
     public List<DocumentSuggestResponse> getSuggestions(@RequestParam String query, @RequestParam(defaultValue = "6") int limit) throws IOException {
+        logger.info("Getting suggestions for query: {}", query);
         return documentService.getSuggestions(query, limit);
+    }
+
+    @GetMapping("/{documentId}/status")
+    public ResponseEntity<Map<String, Object>> getDocumentStatus(@PathVariable String documentId) {
+        try {
+            logger.info("Checking status for document with ID: {}", documentId);
+
+            var document = documentRepository
+                    .findDocumentByDocumentId(documentId)
+                    .orElse(null);
+
+            if (document == null) {
+                return ResponseEntity.ok(Map.of(
+                        "documentId", documentId,
+                        "status", "processing",
+                        "message", "Document is still being processed or not found"
+                ));
+            }
+
+            return ResponseEntity.ok(Map.of(
+                    "documentId", documentId,
+                    "status", "completed",
+                    "document", document
+            ));
+
+        } catch (Exception e) {
+            logger.error("Error checking document status", e);
+            return ResponseEntity.badRequest().body(Map.of(
+                    "documentId", documentId,
+                    "status", "error",
+                    "message", e.getMessage()
+            ));
+        }
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('DOCUMENT_READ')")
     public ResponseEntity<Document> getDocumentById(@PathVariable String id) {
+        logger.info("Fetching document with id: {}", id);
         Document document = documentService.getDocumentById(id);
         if (document != null) {
             return ResponseEntity.ok(document);
@@ -102,12 +152,26 @@ public class DocumentController {
         return ResponseEntity.notFound().build();
     }
 
-    // API công khai không cần xác thực
-    @GetMapping("/public/info")
-    public ResponseEntity<Map<String, String>> getPublicInfo() {
-        Map<String, String> response = new HashMap<>();
-        response.put("status", "success");
-        response.put("message", "Thông tin công khai về hệ thống tài liệu");
-        return ResponseEntity.ok(response);
+    /**
+     * API để nhận dữ liệu đã xử lý từ document-process-service (nếu Kafka không hoạt động)
+     */
+    @PostMapping("/process")
+    public ResponseEntity<?> processDocument(@RequestBody DocumentDataDto documentData) {
+        try {
+            logger.info("Received processed document data for ID: {}", documentData.getDocumentId());
+            Document document = documentService.processNormalizedDocument(documentData);
+            
+            return ResponseEntity.ok(Map.of(
+                    "documentId", document.getDocumentId(),
+                    "status", "completed",
+                    "message", "Document processed successfully"
+            ));
+        } catch (Exception e) {
+            logger.error("Error processing document data", e);
+            return ResponseEntity.badRequest().body(Map.of(
+                    "error", "Failed to process document: " + e.getMessage(),
+                    "documentId", documentData.getDocumentId()
+            ));
+        }
     }
 }
