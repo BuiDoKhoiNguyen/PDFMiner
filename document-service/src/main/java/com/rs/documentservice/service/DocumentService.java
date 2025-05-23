@@ -13,8 +13,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ByteArrayResource;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.elasticsearch.core.suggest.Completion;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -58,14 +60,22 @@ public class DocumentService {
     @Value("${document-process.url}")
     private String DOCUMENT_PROCESS_URL;
 
-    public List<Document> findAll() {
-        List<Document> results = new ArrayList<>();
-        documentRepository.findAll().forEach(results::add);
+    public List<Document> findDashboardDocuments() {
+        List<Document> documents = documentRepository.findAll();
+        return documents;
+    }
+
+    public List<Document> findAll(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Document> pageResults = documentRepository.findAll(pageable);
+        List<Document> results = pageResults.getContent();
         return results;
     }
 
-    public List<Document> searchDocuments(String keyword) {
-        return documentRepository.searchDocuments(keyword);
+    public List<Document> searchDocuments(String keyword, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+
+        return documentRepository.searchDocuments(keyword, pageable);
     }
 
     public List<DocumentSuggestResponse> getSuggestions(String query, int limit) {
@@ -191,7 +201,12 @@ public class DocumentService {
             esDocument.put("documentType", document.getDocumentType());
             esDocument.put("issuingAgency", document.getIssuingAgency());
             esDocument.put("signer", document.getSigner());
-            esDocument.put("issueDate", document.getIssueDate().toString());
+            if (document.getIssueDate() != null) {
+                esDocument.put("issueDate", document.getIssueDate().toString());
+            } else {
+                esDocument.put("issueDate", null);
+            }
+
             esDocument.put("fileLink", document.getFileLink());
             esDocument.put("status", document.getStatus());
             esDocument.put("searchText", document.getSearchText());

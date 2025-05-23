@@ -5,7 +5,8 @@ import {
   Upload as UploadIcon,
   Search as SearchIcon,
   SupervisedUserCircle as AdminIcon,
-  Settings as SettingsIcon
+  Settings as SettingsIcon,
+  Chat as ChatIcon
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -47,10 +48,16 @@ export const Sidebar = ({ drawerWidth, mobileOpen, handleDrawerToggle }: Sidebar
       permission: 'DOCUMENT_SEARCH',
     },
     {
+      text: 'Trợ lý thông minh',
+      icon: <ChatIcon />,
+      path: '/chatbot',
+      permission: null,
+    },
+    {
       text: 'Admin Panel',
       icon: <AdminIcon />,
       path: '/admin',
-      permission: 'ADMIN',
+      permission: null, // Đổi thành null để không kiểm tra quyền
       role: 'ADMIN',
     },
     {

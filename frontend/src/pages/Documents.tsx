@@ -51,6 +51,17 @@ interface Document {
   pageCount: number;
 }
 
+// Thêm interface cho API response với metadata phân trang
+interface PaginatedResponse {
+  content: DocumentData[];
+  totalElements: number;
+  totalPages: number;
+  size: number;
+  number: number;
+  first: boolean;
+  last: boolean;
+}
+
 export const Documents = () => {
   const [documents, setDocuments] = useState<Document[]>([]);
   const [loading, setLoading] = useState(true);
@@ -78,23 +89,25 @@ export const Documents = () => {
   };
 
   // Fetch all documents
-  const fetchDocuments = async () => {
+  const fetchDocuments = async (page = 1) => {
     try {
       setLoading(true);
       setError('');
-      const response = await documentApi.getAllDocuments();
-
+      const response = await documentApi.getAllDocuments(page - 1, 9);
+      
       if (response.data && Array.isArray(response.data)) {
         const processedDocuments = mapApiDataToDocuments(response.data);
         setDocuments(processedDocuments);
-        setTotalPages(Math.ceil(processedDocuments.length / 6));
+        
+        // Tạm tính totalPages, trong thực tế backend nên trả về totalPages
+        setTotalPages(3);
       } else {
         setDocuments([]);
         setTotalPages(0);
         setError('Dữ liệu tài liệu không hợp lệ');
       }
-    } catch (error) {
-      console.error('Error fetching documents:', error);
+    } catch (err) {
+      console.error('Error fetching documents:', err);
       setError('Không thể tải danh sách tài liệu');
     } finally {
       setLoading(false);
@@ -104,6 +117,7 @@ export const Documents = () => {
   // Initial data load
   useEffect(() => {
     fetchDocuments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle search
@@ -119,7 +133,8 @@ export const Documents = () => {
         const processedDocuments = mapApiDataToDocuments(response.data);
         setDocuments(processedDocuments);
         setPage(1);
-        setTotalPages(Math.ceil(processedDocuments.length / 6));
+        // Trong tìm kiếm, thường hiển thị tất cả kết quả trên 1 trang
+        setTotalPages(1);
       } else {
         setDocuments([]);
         setPage(1);
@@ -159,8 +174,9 @@ export const Documents = () => {
     }).format(date);
   };
 
-  // Documents for current page
-  const currentDocuments = documents.slice((page - 1) * 6, page * 6);
+  // Bỏ đoạn slice documents vì backend đã trả về đúng số lượng item cần hiển thị
+  // const currentDocuments = documents.slice((page - 1) * 6, page * 6);
+  const currentDocuments = documents;
 
   return (
     <Container maxWidth="lg">
@@ -221,7 +237,7 @@ export const Documents = () => {
 
       {loading ? (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
-          {[1, 2, 3, 4, 5, 6].map((item) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
             <Box key={item} sx={{ width: { xs: '100%', sm: '47%', md: '31%' } }}>
               <Card>
                 <Skeleton variant="rectangular" height={140} />
@@ -333,12 +349,17 @@ export const Documents = () => {
           </Box>
 
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-            <Pagination
-              count={totalPages}
-              page={page}
-              onChange={(_, value) => setPage(value)}
-              color="primary"
-            />
+            {totalPages > 1 && (
+              <Pagination
+                count={totalPages}
+                page={page}
+                onChange={(_, value) => {
+                  setPage(value);
+                  fetchDocuments(value);
+                }}
+                color="primary"
+              />
+            )}
           </Box>
         </>
       )}

@@ -35,22 +35,40 @@ public class DocumentController {
     @Value("${storage-service.url}")
     private String storageServiceUrl;
 
-  @GetMapping
-  @PreAuthorize("hasAuthority('DOCUMENT_READ')")
-  public ResponseEntity<?> getAllDocuments() {
-      logger.info("Fetching all documents");
-      
-      try {
-          List<Document> documents = documentService.findAll();
-          return ResponseEntity.ok(documents);
-      } catch (Exception e) {
-          logger.error("Error fetching documents", e);
-          Map<String, String> errorResponse = new HashMap<>();
-          errorResponse.put("status", "error");
-          errorResponse.put("message", "Không thể tải danh sách tài liệu: " + e.getMessage());
-          return ResponseEntity.status(500).body(errorResponse);
-      }
-  }
+    @GetMapping("/dashboard")
+    @PreAuthorize("hasAuthority('DOCUMENT_READ')")
+    public ResponseEntity<?> getDashboardDocuments() {
+        logger.info("Fetching dashboard documents");
+        
+        try {
+            List<Document> documents = documentService.findDashboardDocuments();
+            return ResponseEntity.ok(documents);
+        } catch (Exception e) {
+            logger.error("Error fetching dashboard documents", e);
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("status", "error");
+            errorResponse.put("message", "Không thể tải tài liệu dashboard: " + e.getMessage());
+            return ResponseEntity.status(500).body(errorResponse);
+        }
+    }
+
+    @GetMapping
+    @PreAuthorize("hasAuthority('DOCUMENT_READ')")
+    public ResponseEntity<?> getAllDocuments(@RequestParam(defaultValue = "0") int page,
+                                            @RequestParam(defaultValue = "9") int size) {
+        logger.info("Fetching all documents");
+        
+        try {
+            List<Document> documents = documentService.findAll(page, size);
+            return ResponseEntity.ok(documents);
+        } catch (Exception e) {
+            logger.error("Error fetching documents", e);
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("status", "error");
+            errorResponse.put("message", "Không thể tải danh sách tài liệu: " + e.getMessage());
+            return ResponseEntity.status(500).body(errorResponse);
+        }
+    }
 
 
     @PutMapping("/{id}")
@@ -74,9 +92,11 @@ public class DocumentController {
 
     @GetMapping("/search")
     @PreAuthorize("hasAuthority('DOCUMENT_SEARCH')")
-    public List<Document> searchDocuments(@RequestParam String keyword) {
+    public List<Document> searchDocuments(@RequestParam String keyword, 
+                                          @RequestParam(defaultValue = "0") int page,
+                                          @RequestParam(defaultValue = "6") int size) {
         logger.info("Searching documents with keyword: {}", keyword);
-        return documentService.searchDocuments(keyword);
+        return documentService.searchDocuments(keyword, page, size);
     }
 
     /**

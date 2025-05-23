@@ -1,6 +1,8 @@
 package com.rs.documentservice.repository;
 
 import com.rs.documentservice.model.Document;
+
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
@@ -12,8 +14,7 @@ public interface DocumentRepository extends ElasticsearchRepository<Document, St
 
     Optional<Document> findDocumentByDocumentId(String documentId);
     
-    @Query("{\"match_all\": {}}")
-    List<Document> findAll();
+    Page<Document> findAll(Pageable pageable);
     
     @Query("{\"bool\": {\"should\": ["
             + "{\"match\": {\"documentNumber\": \"?0\"}},"
@@ -27,7 +28,7 @@ public interface DocumentRepository extends ElasticsearchRepository<Document, St
             + "{\"match\": {\"content\": {\"query\": \"?0\", \"minimum_should_match\": \"70%\"}}},"
             + "{\"term\": {\"documentNumber\": \"?0\"}}"
             + "]}}")
-    List<Document> searchDocuments(String keyword);
+    List<Document> searchDocuments(String keyword, Pageable pageable);
 
     Document getDocumentEntityByDocumentId(String id);
 
@@ -35,4 +36,6 @@ public interface DocumentRepository extends ElasticsearchRepository<Document, St
 
     @Query("{\"match\": {\"searchText\": {\"query\": \"?0\", \"fuzziness\": \"AUTO\"}}}")
     List<Document> findBySearchTextContaining(String query, Pageable pageable);
+
+    List<Document> findAll();
 }

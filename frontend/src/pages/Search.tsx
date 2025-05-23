@@ -6,6 +6,7 @@ import {
   Paper, 
   Card,
   CardContent,
+  CardActions,
   TextField,
   InputAdornment,
   IconButton, 
@@ -13,10 +14,10 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
-  Divider,
   CircularProgress,
   Button,
-  Alert
+  Alert,
+  Chip
 } from '@mui/material';
 import { 
   Search as SearchIcon, 
@@ -39,6 +40,9 @@ interface SearchResult {
   matchCount: number; // Số lượng kết quả phù hợp
   documentId?: string; // Thêm trường này để tương thích với API
   content?: string;  // Thêm trường này để chứa content từ API
+  documentType?: string; // Loại tài liệu
+  issueDate?: string; // Ngày ban hành
+  status?: string; // Trạng thái xử lý tài liệu
 }
 
 // Define API response type for better type safety
@@ -111,6 +115,7 @@ export const Search = () => {
   const handleSearch = async () => {
     if (!query.trim()) return;
     
+    console.log("Starting search for query:", query);
     setLoading(true);
     setError('');
     
@@ -124,27 +129,50 @@ export const Search = () => {
           // Extract 2-3 sentences from content as snippets
           const content = doc.content || "";
           // Split content by periods, question marks, or exclamation points followed by space
-          const sentences = content.split(/[.!?]\s+/);
-          const snippets = sentences
+          const sentences = content.split(/[.!?]\s+/).filter(s => s.trim().length > 0);
+          
+          // Make sure we have at least some content to show
+          let snippets: string[] = [];
+          
+          // Try to find sentences containing the search term
+          const matchingSentences = sentences
             .filter((s: string) => s.toLowerCase().includes(query.toLowerCase()))
             .slice(0, 3)
             .map((s: string) => s.trim() + ".");
+            
+          if (matchingSentences.length > 0) {
+            snippets = matchingSentences;
+          } else if (sentences.length > 0) {
+            // If no matching sentences found, just take the first few sentences
+            snippets = sentences.slice(0, 2).map((s: string) => s.trim() + ".");
+          } else {
+            // If no sentences found, take a substring of the content
+            snippets = [content.substring(0, 200) + "..."];
+          }
+          
+          console.log("Document ID:", doc.documentId, "Snippets:", snippets);
           
           return {
             id: doc.documentId,
             documentId: doc.documentId,
             title: doc.title || "Untitled Document",
-            snippets: snippets.length ? snippets : [content.substring(0, 200) + "..."],
-            matchCount: snippets.length || 1,
-            content: doc.content
+            snippets: snippets,
+            matchCount: matchingSentences.length || 1,
+            content: doc.content,
+            documentType: doc.documentType || "Không phân loại",
+            issueDate: doc.issueDate || "",
+            status: doc.status || "COMPLETED"
           };
         });
         
+        console.log("Mapped results:", mappedResults);
         setSearchResults(mappedResults);
       } else {
         setSearchResults([]);
       }
       setHasSearched(true);
+      // Hide suggestions when search results are displayed
+      setSuggestions([]);
     } catch (error) {
       console.error("Search failed:", error);
       setError(
@@ -161,6 +189,16 @@ export const Search = () => {
     setSearchResults([]);
     setHasSearched(false);
     setError('');
+  };
+
+  const formatDate = (dateString: string) => {
+    if (!dateString) return 'N/A';
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat('vi-VN', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).format(date);
   };
 
   return (
@@ -182,7 +220,12 @@ export const Search = () => {
             placeholder="Nhập từ khóa tìm kiếm..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSearch();
+              }
+            }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -300,53 +343,89 @@ export const Search = () => {
               </Typography>
             </Paper>
           ) : (
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
               {searchResults.map((result) => (
-                <Card key={result.id}>
-                  <CardContent>
-                    <Typography 
-                      variant="h6" 
-                      component="div" 
-                      gutterBottom
-                      sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }}
-                      onClick={() => navigate(`/documents/${encodeURIComponent(result.id)}`)}
-                    >
-                      {result.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" gutterBottom>
-                      {result.matchCount} kết quả phù hợp
-                    </Typography>
-                    <Divider sx={{ my: 1 }} />
-                    <List dense>
-                      {result.snippets.map((snippet, index) => (
-                        <ListItem key={index}>
-                          <ListItemIcon>
-                            <DocumentIcon color="primary" />
-                          </ListItemIcon>
-                          <ListItemText 
-                            primary={snippet}
-                            primaryTypographyProps={{
-                              dangerouslySetInnerHTML: {
-                                __html: snippet.replace(
-                                  new RegExp(query, 'gi'),
-                                  (match) => `<mark style="background-color: #fff59d; padding: 0 2px;">${match}</mark>`
-                                )
-                              }
-                            }}
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+                <Box key={result.id} sx={{ width: { xs: '100%', sm: '47%', md: '31%' } }}>
+                  <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
+                        <Typography 
+                          variant="h6" 
+                          component="div" 
+                          sx={{
+                            whiteSpace: 'normal',
+                            wordBreak: 'break-word',
+                            cursor: 'pointer', 
+                            '&:hover': { textDecoration: 'underline' },
+                            maxWidth: '80%'
+                          }}
+                          onClick={() => navigate(`/documents/${encodeURIComponent(result.id)}`)}
+                        >
+                          {result.title}
+                        </Typography>
+                        <Chip
+                          label={result.status === 'COMPLETED' ? 'Hoàn thành' : 'Đang xử lý'}
+                          color={result.status === 'COMPLETED' ? 'success' : 'warning'}
+                          size="small"
+                        />
+                      </Box>
+                      
+                      <Box sx={{ mt: 1 }}>
+                        <Typography variant="body2" color="text.secondary">
+                          Loại: {result.documentType}
+                        </Typography>
+                        {result.issueDate && (
+                          <Typography variant="body2" color="text.secondary">
+                            Ngày: {formatDate(result.issueDate)}
+                          </Typography>
+                        )}
+                        <Typography variant="body2" color="primary" sx={{ mt: 0.5 }}>
+                          {result.matchCount} kết quả phù hợp
+                        </Typography>
+                      </Box>
+                      
+                      <Box sx={{ mt: 2 }}>
+                        <Typography variant="body2" color="text.secondary" paragraph sx={{ mb: 1 }}>
+                          Trích đoạn:
+                        </Typography>
+                        <Box sx={{ 
+                          bgcolor: 'rgba(0, 0, 0, 0.02)', 
+                          p: 1.5, 
+                          borderRadius: 1,
+                          maxHeight: 120,
+                          overflow: 'auto'
+                        }}>
+                          {result.snippets.length > 0 ? (
+                            result.snippets.map((snippet, index) => (
+                              <Typography 
+                                key={index} 
+                                variant="body2"
+                                paragraph
+                                sx={{ mb: index < result.snippets.length - 1 ? 1 : 0 }}
+                                dangerouslySetInnerHTML={{
+                                  __html: snippet.replace(
+                                    new RegExp(query, 'gi'),
+                                    (match) => `<mark style="background-color: #fff59d; padding: 0 2px;">${match}</mark>`
+                                  )
+                                }}
+                              />
+                            ))
+                          ) : (
+                            <Typography variant="body2">Không có trích đoạn</Typography>
+                          )}
+                        </Box>
+                      </Box>
+                    </CardContent>
+                    <CardActions>
                       <Button 
                         size="small" 
                         onClick={() => navigate(`/documents/${encodeURIComponent(result.id)}`)}
                       >
                         Xem tài liệu
                       </Button>
-                    </Box>
-                  </CardContent>
-                </Card>
+                    </CardActions>
+                  </Card>
+                </Box>
               ))}
             </Box>
           )}

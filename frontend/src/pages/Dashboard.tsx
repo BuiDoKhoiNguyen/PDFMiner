@@ -4,7 +4,6 @@ import {
   Typography, 
   Box, 
   Paper,
-  Grid,
   Card,
   CardContent,
   Chip,
@@ -62,13 +61,18 @@ export const Dashboard = () => {
         setLoading(true);
         setError(null);
         
-        // Lấy danh sách tài liệu
-        const response = await documentApi.getAllDocuments();
+        // Lấy danh sách tài liệu cho dashboard
+        const response = await documentApi.getDashboardDocuments();
         
         if (response.data && Array.isArray(response.data)) {
           const docs = response.data;
-          // Sắp xếp theo ngày tạo mới nhất
+          // Sắp xếp theo trạng thái (PROCESSING lên đầu) và ngày tạo mới nhất
           const sortedDocs = [...docs].sort((a, b) => {
+            // Ưu tiên status PROCESSING lên đầu
+            if (a.status === 'PROCESSING' && b.status !== 'PROCESSING') return -1;
+            if (a.status !== 'PROCESSING' && b.status === 'PROCESSING') return 1;
+            
+            // Nếu cùng trạng thái, sắp xếp theo ngày tạo mới nhất
             const dateA = a.issueDate || a.createdAt || '';
             const dateB = b.issueDate || b.createdAt || '';
             return dateB.localeCompare(dateA);
@@ -147,162 +151,193 @@ export const Dashboard = () => {
         </Alert>
       )}
 
-      <Grid container spacing={3} sx={{ mb: 4 }}>
-        <Grid item xs={12} sm={6} md={3}>
-          <Card sx={{ height: '100%' }}>
-            <CardContent>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <DocumentIcon color="primary" sx={{ fontSize: 40, mr: 2 }} />
-                <Typography variant="h5" component="div">
-                  {stats.totalDocuments}
-                </Typography>
-              </Box>
-              <Typography color="text.secondary" gutterBottom>
-                Tổng số tài liệu
+      {/* Thống kê tổng quan */}
+      <Box sx={{ 
+        display: 'grid', 
+        gridTemplateColumns: { 
+          xs: '1fr', 
+          sm: 'repeat(2, 1fr)', 
+          md: 'repeat(4, 1fr)' 
+        }, 
+        gap: 3, 
+        mb: 4 
+      }}>
+        <Card sx={{ height: '100%' }}>
+          <CardContent>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <DocumentIcon color="primary" sx={{ fontSize: 40, mr: 2 }} />
+              <Typography variant="h5" component="div">
+                {stats.totalDocuments}
               </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={3}>
-          <Card sx={{ height: '100%' }}>
-            <CardContent>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <UploadIcon color="success" sx={{ fontSize: 40, mr: 2 }} />
-                <Typography variant="h5" component="div">
-                  {stats.processedToday}
-                </Typography>
-              </Box>
-              <Typography color="text.secondary" gutterBottom>
-                Đã xử lý hôm nay
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={3}>
-          <Card sx={{ height: '100%' }}>
-            <CardContent>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <SearchIcon color="info" sx={{ fontSize: 40, mr: 2 }} />
-                <Typography variant="h5" component="div">
-                  {stats.pendingProcessing}
-                </Typography>
-              </Box>
-              <Typography color="text.secondary" gutterBottom>
-                Đang xử lý
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={3}>
-          <Card sx={{ height: '100%' }}>
-            <CardContent>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <UsersIcon color="warning" sx={{ fontSize: 40, mr: 2 }} />
-                <Typography variant="h5" component="div">
-                  1
-                </Typography>
-              </Box>
-              <Typography color="text.secondary" gutterBottom>
-                Người dùng hoạt động
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-
-      <Grid container spacing={4}>
-        <Grid item xs={12} md={7}>
-          <Paper sx={{ p: 3, height: '100%' }}>
-            <Typography variant="h6" gutterBottom>
-              Tài liệu gần đây
-            </Typography>
-            <Divider sx={{ mb: 2 }} />
-            
-            {documents.length === 0 ? (
-              <Typography variant="body1" align="center" sx={{ py: 4 }}>
-                Chưa có tài liệu nào. Hãy tải lên tài liệu đầu tiên của bạn.
-              </Typography>
-            ) : (
-              documents.map((doc) => (
-                <Box key={doc.documentId} sx={{ mb: 2 }}>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Box>
-                      <Typography 
-                        variant="subtitle1" 
-                        sx={{ cursor: 'pointer', '&:hover': { textDecoration: 'underline' } }} 
-                        onClick={() => {
-                          if (doc.documentId) {
-                            navigate(`/documents/${encodeURIComponent(doc.documentId)}`);
-                          }
-                        }}
-                      >
-                        {doc.title || doc.documentName || 'Không có tiêu đề'}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Đã tải lên: {formatDate(doc.issueDate || doc.createdAt)}
-                      </Typography>
-                    </Box>
-                    <Chip 
-                      label={doc.status === 'COMPLETED' ? 'Hoàn thành' : 'Đang xử lý'} 
-                      color={doc.status === 'COMPLETED' ? 'success' : 'warning'}
-                      size="small"
-                    />
-                  </Box>
-                  
-                  {doc.status === 'PROCESSING' && (
-                    <LinearProgress sx={{ mt: 1 }} />
-                  )}
-                  
-                  <Divider sx={{ mt: 2 }} />
-                </Box>
-              ))
-            )}
-            
-            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-              <Button 
-                variant="outlined" 
-                onClick={() => navigate('/documents')}
-              >
-                Xem tất cả tài liệu
-              </Button>
             </Box>
-          </Paper>
-        </Grid>
+            <Typography color="text.secondary" gutterBottom>
+              Tổng số tài liệu
+            </Typography>
+          </CardContent>
+        </Card>
         
-        <Grid item xs={12} md={5}>
-          <Paper sx={{ p: 3, mb: 4 }}>
+        <Card sx={{ height: '100%' }}>
+          <CardContent>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <UploadIcon color="success" sx={{ fontSize: 40, mr: 2 }} />
+              <Typography variant="h5" component="div">
+                {stats.processedToday}
+              </Typography>
+            </Box>
+            <Typography color="text.secondary" gutterBottom>
+              Đã xử lý hôm nay
+            </Typography>
+          </CardContent>
+        </Card>
+        
+        <Card sx={{ height: '100%' }}>
+          <CardContent>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <SearchIcon color="info" sx={{ fontSize: 40, mr: 2 }} />
+              <Typography variant="h5" component="div">
+                {stats.pendingProcessing}
+              </Typography>
+            </Box>
+            <Typography color="text.secondary" gutterBottom>
+              Đang xử lý
+            </Typography>
+          </CardContent>
+        </Card>
+        
+        <Card sx={{ height: '100%' }}>
+          <CardContent>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <UsersIcon color="warning" sx={{ fontSize: 40, mr: 2 }} />
+              <Typography variant="h5" component="div">
+                1
+              </Typography>
+            </Box>
+            <Typography color="text.secondary" gutterBottom>
+              Người dùng hoạt động
+            </Typography>
+          </CardContent>
+        </Card>
+      </Box>
+
+      {/* Các phần nội dung chính */}
+      <Box sx={{ 
+        display: 'grid', 
+        gridTemplateColumns: { 
+          xs: '1fr', 
+          md: '7fr 5fr' 
+        }, 
+        gap: 4 
+      }}>
+        {/* Phần tài liệu gần đây */}
+        <Paper sx={{ p: 3, height: '100%' }}>
+          <Typography variant="h6" gutterBottom>
+            Tài liệu gần đây
+          </Typography>
+          <Divider sx={{ mb: 2 }} />
+          
+          {documents.length === 0 ? (
+            <Typography variant="body1" align="center" sx={{ py: 4 }}>
+              Chưa có tài liệu nào. Hãy tải lên tài liệu đầu tiên của bạn.
+            </Typography>
+          ) : (
+            documents.map((doc) => (
+              <Box key={doc.documentId} sx={{ mb: 2 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
+                  <Box sx={{ 
+                    maxWidth: 'calc(100% - 120px)',
+                    overflow: 'hidden',
+                    width: '100%' 
+                  }}>
+                    <Typography 
+                      variant="subtitle1" 
+                      sx={{ 
+                        cursor: 'pointer', 
+                        '&:hover': { textDecoration: 'underline' },
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical'
+                      }} 
+                      onClick={() => {
+                        if (doc.documentId) {
+                          navigate(`/documents/${encodeURIComponent(doc.documentId)}`);
+                        }
+                      }}
+                    >
+                      {doc.title || doc.documentName || 'Không có tiêu đề'}
+                    </Typography>
+                    <Typography 
+                      variant="body2" 
+                      color="text.secondary"
+                      sx={{
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      Đã tải lên: {formatDate(doc.issueDate || doc.createdAt)}
+                    </Typography>
+                  </Box>
+                  <Chip 
+                    label={doc.status === 'COMPLETED' ? 'Hoàn thành' : 'Đang xử lý'} 
+                    color={doc.status === 'COMPLETED' ? 'success' : 'warning'}
+                    size="small"
+                    sx={{ 
+                      minWidth: '100px', 
+                      textAlign: 'center',
+                      flexShrink: 0 
+                    }}
+                  />
+                </Box>
+                
+                {doc.status === 'PROCESSING' && (
+                  <LinearProgress sx={{ mt: 1 }} />
+                )}
+                
+                <Divider sx={{ mt: 2 }} />
+              </Box>
+            ))
+          )}
+          
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+            <Button 
+              variant="outlined" 
+              onClick={() => navigate('/documents')}
+            >
+              Xem tất cả tài liệu
+            </Button>
+          </Box>
+        </Paper>
+        
+        {/* Phần bên phải */}
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <Paper sx={{ p: 3 }}>
             <Typography variant="h6" gutterBottom>
               Hành động nhanh
             </Typography>
             <Divider sx={{ mb: 2 }} />
             
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Button 
-                  variant="contained" 
-                  fullWidth
-                  startIcon={<UploadIcon />}
-                  onClick={() => navigate('/upload')}
-                  sx={{ py: 1.5 }}
-                >
-                  Tải lên
-                </Button>
-              </Grid>
-              <Grid item xs={6}>
-                <Button 
-                  variant="outlined" 
-                  fullWidth
-                  startIcon={<SearchIcon />}
-                  onClick={() => navigate('/search')}
-                  sx={{ py: 1.5 }}
-                >
-                  Tìm kiếm
-                </Button>
-              </Grid>
-            </Grid>
+            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2 }}>
+              <Button 
+                variant="contained" 
+                fullWidth
+                startIcon={<UploadIcon />}
+                onClick={() => navigate('/upload')}
+                sx={{ py: 1.5 }}
+              >
+                Tải lên
+              </Button>
+              <Button 
+                variant="outlined" 
+                fullWidth
+                startIcon={<SearchIcon />}
+                onClick={() => navigate('/search')}
+                sx={{ py: 1.5 }}
+              >
+                Tìm kiếm
+              </Button>
+            </Box>
           </Paper>
           
           <Paper sx={{ p: 3 }}>
@@ -330,8 +365,8 @@ export const Dashboard = () => {
               </Box>
             )}
           </Paper>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Container>
   );
 };

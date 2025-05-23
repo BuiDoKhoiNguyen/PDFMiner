@@ -53,6 +53,17 @@ export const Navbar = ({ onToggleSidebar }: NavbarProps) => {
           PDFMiner
         </Typography>
 
+        <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center', mr: 2 }}>
+          <Button 
+            color="inherit" 
+            component={RouterLink} 
+            to="/chatbot"
+            sx={{ textTransform: 'none', fontWeight: 'medium' }}
+          >
+            Trợ lý thông minh
+          </Button>
+        </Box>
+
         {isAuthenticated ? (
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <IconButton color="inherit" size="large">

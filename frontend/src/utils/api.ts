@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Create axios instance with base URL
-const api = axios.create({
+export const api = axios.create({
   baseURL: '/api', // Assuming API is proxied through /api
   headers: {
     'Content-Type': 'application/json',
@@ -48,9 +48,41 @@ export const authApi = {
   getCurrentUser: () => api.get('/me'),
 };
 
+// User Management API
+export const userApi = {
+  getAllUsers: () => api.get('/users'),
+  
+  getUserById: (id: string) => api.get(`/users/${id}`),
+  
+  createUser: (userData: {
+    username: string;
+    password: string;
+    email: string;
+    fullName: string;
+    role: string;
+    enabled: boolean;
+  }) => api.post('/users', userData),
+  
+  updateUser: (id: string, userData: {
+    fullName?: string;
+    email?: string;
+    role?: string;
+    enabled?: boolean;
+  }) => api.put(`/users/${id}`, userData),
+  
+  deleteUser: (id: string) => api.delete(`/users/${id}`),
+  
+  updatePassword: (id: string, passwordData: {
+    newPassword: string;
+  }) => api.put(`/users/${id}/password`, passwordData),
+};
+
 // Document API
 export const documentApi = {
-  getAllDocuments: () => api.get('/documents'),
+  getAllDocuments: (page = 0, size = 9) => api.get(`/documents?page=${page}&size=${size}`),
+  
+  // API riêng cho Dashboard để lấy tất cả tài liệu mới nhất có PROCESSING ưu tiên
+  getDashboardDocuments: () => api.get('/documents/dashboard'),
   
   getDocumentById: (id: string) => api.get(`/documents/${id}`),
   

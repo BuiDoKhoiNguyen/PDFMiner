@@ -17,6 +17,7 @@ import { Upload } from './pages/Upload';
 import { Search } from './pages/Search';
 import { Profile } from './pages/Profile';
 import { AdminPanel } from './pages/AdminPanel';
+import ChatbotPage from './pages/ChatbotPage';
 
 // Create a query client for React Query
 const queryClient = new QueryClient();
@@ -151,6 +152,9 @@ function App() {
                     <AdminPanel />
                   </AdminRoute>
                 } />
+                
+                {/* Chatbot route - public access */}
+                <Route path="chatbot" element={<ChatbotPage />} />
                 
                 {/* Catch all route */}
                 <Route path="*" element={<Navigate to="/" />} />

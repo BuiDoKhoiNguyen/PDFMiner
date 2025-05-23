@@ -5,115 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c151971e-6456-4353-8d22-35d5a4bbb44b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/document-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/document-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/storage-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/storage-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/user-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/user-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/OcrToTableTool.py" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/OcrToTableTool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/TableCellExtractor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/detectable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/21_2020_TT_BGDDT.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/57-2017-NĐ-CP.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/CV 43 BCĐ18.signed.signed.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Cong_van_6666_BYT_TM_file_pdf_5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Dai_tuong_Vo_Nguyen_Giap.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Hien_Phap_2013.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Văn bản hợp nhất số 02.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/_data_soytehcm_vanphongso_attachments_2021_3_222btp_4320219.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/_data_soytehcm_vanphongso_attachments_2021_3_81qdttg190120211signed_4320218.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/tt3838_169_2011_TT-BTC.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/tt5239_ND35CP.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/tt5368_138_2013_ND-CP.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Đơn-xin-cấp-học-bổng-STF_PPT.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/layoutparser-0.0.0-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/det/inference.pdiparams" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/det/inference.pdiparams.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/det/inference.pdmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/rec/inference.pdiparams" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/rec/inference.pdiparams.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/paddleocr_models/rec/inference.pdmodel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/table-detection-and-extraction.pt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/table_detector.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/models/text_recognizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_0_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_0_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_0_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_0_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_1_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_2_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_3_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_4_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_5_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_6_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_6_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_7_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_7_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/ocr_slices/img_8_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/opencv_extract_table.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/pdf_to_text.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/predict.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/predict.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/table_creator/data_structures.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/table_creator/table_extractor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/table_creator/visualization.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/table_extraction_demo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/document-process-service/table_extraction_demo.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/table_ocr_processor.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/Dai_tuong_Vo_Nguyen_Giap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/XNDH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/XNDH.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/devan2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/devan2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/devan4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/devan4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/devanclearn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/test2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/test2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/document-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/ElasticSearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/ElasticSearchConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/controller/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/model/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/model/Document.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/repository/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/repository/DocumentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/CustomUserDetailsService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/DocumentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/robots.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/DocumentList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/DocumentUpload.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/rs/gateway/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/service/S3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/storage-service/src/main/java/com/rs/storageservice/service/S3Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/rs/userservice/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Documents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Documents.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +273,9 @@
       <workItem from="1745571671462" duration="33000" />
       <workItem from="1746890785028" duration="8000" />
       <workItem from="1747756638607" duration="38920000" />
-      <workItem from="1747894114663" duration="12065000" />
+      <workItem from="1747894114663" duration="25037000" />
+      <workItem from="1747992688273" duration="1946000" />
+      <workItem from="1748006488486" duration="5714000" />
     </task>
     <servers />
   </component>
