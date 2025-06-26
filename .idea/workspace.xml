@@ -4,42 +4,620 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c151971e-6456-4353-8d22-35d5a4bbb44b" name="Changes" comment="">
+    <list default="true" id="9646c40e-4d66-4007-b7b8-f6419e4d2bf4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/tool/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system-design.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3dc845ee-cc6b-4f47-a7db-bf6cfdc9bc4c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/document-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/document-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/Dai_tuong_Vo_Nguyen_Giap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/XNDH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/XNDH.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/devan2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/devan2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/devan4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/devan4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/devanclearn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/page_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/test2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-process-service/output/test2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/controller/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/repository/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/repository/DocumentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/DocumentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KAFKA-INTEGRATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/OcrToTableTool.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/OcrToTableTool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/cls/ch_PP-OCRv3/ch_PP-OCRv3_rotnet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/cls/ch_PP-OCRv3/ch_PP-OCRv3_rotnet.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/cls/cls_mv3.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/cls/cls_mv3.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_PP-OCRv2/ch_PP-OCRv2_det_cml.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_PP-OCRv2/ch_PP-OCRv2_det_cml.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_PP-OCRv2/ch_PP-OCRv2_det_distill.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_PP-OCRv2/ch_PP-OCRv2_det_distill.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_PP-OCRv2/ch_PP-OCRv2_det_dml.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_PP-OCRv2/ch_PP-OCRv2_det_dml.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_PP-OCRv2/ch_PP-OCRv2_det_student.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_PP-OCRv2/ch_PP-OCRv2_det_student.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_cml.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_cml.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_dml.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_dml.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_student.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_PP-OCRv3/ch_PP-OCRv3_det_student.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_ppocr_v2.0/ch_det_mv3_db_v2.0.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_ppocr_v2.0/ch_det_mv3_db_v2.0.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/ch_ppocr_v2.0/ch_det_res18_db_v2.0.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/ch_ppocr_v2.0/ch_det_res18_db_v2.0.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_mv3_db.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_mv3_db.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_mv3_east.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_mv3_east.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_mv3_pse.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_mv3_pse.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r18_vd_ct.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r18_vd_ct.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_db++_icdar15.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_db++_icdar15.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_db++_td_tr.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_db++_td_tr.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_drrg_ctw.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_drrg_ctw.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_vd_db.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_vd_db.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_vd_dcn_fce_ctw.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_vd_dcn_fce_ctw.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_vd_east.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_vd_east.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_vd_pse.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_vd_pse.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_vd_sast_icdar15.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_vd_sast_icdar15.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_r50_vd_sast_totaltext.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_r50_vd_sast_totaltext.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/det/det_res18_db_v2.0.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/det/det_res18_db_v2.0.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/e2e/e2e_r50_vd_pg.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/e2e/e2e_r50_vd_pg.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/layoutlm_series/re_layoutlmv2_xfund_zh.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/layoutlm_series/re_layoutlmv2_xfund_zh.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/layoutlm_series/re_layoutxlm_xfund_zh.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/layoutlm_series/re_layoutxlm_xfund_zh.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/layoutlm_series/ser_layoutlm_xfund_zh.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/layoutlm_series/ser_layoutlm_xfund_zh.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/layoutlm_series/ser_layoutlmv2_xfund_zh.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/layoutlm_series/ser_layoutlmv2_xfund_zh.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/layoutlm_series/ser_layoutxlm_xfund_zh.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/layoutlm_series/ser_layoutxlm_xfund_zh.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/sdmgr/kie_unet_sdmgr.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/sdmgr/kie_unet_sdmgr.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/vi_layoutxlm/re_vi_layoutxlm_xfund_zh.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/vi_layoutxlm/re_vi_layoutxlm_xfund_zh.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/vi_layoutxlm/re_vi_layoutxlm_xfund_zh_udml.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/vi_layoutxlm/re_vi_layoutxlm_xfund_zh_udml.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/vi_layoutxlm/ser_vi_layoutxlm_xfund_zh.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/vi_layoutxlm/ser_vi_layoutxlm_xfund_zh.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/kie/vi_layoutxlm/ser_vi_layoutxlm_xfund_zh_udml.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/kie/vi_layoutxlm/ser_vi_layoutxlm_xfund_zh_udml.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/en_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/en_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/arabic_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/arabic_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/chinese_cht_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/chinese_cht_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/cyrillic_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/cyrillic_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/devanagari_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/devanagari_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/japan_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/japan_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/ka_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/ka_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/korean_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/korean_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/latin_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/latin_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/ta_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/ta_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/te_PP-OCRv3_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/te_PP-OCRv3_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/ch_PP-OCRv2/ch_PP-OCRv2_rec.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/ch_PP-OCRv2/ch_PP-OCRv2_rec.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/ch_PP-OCRv2/ch_PP-OCRv2_rec_distillation.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/ch_PP-OCRv2/ch_PP-OCRv2_rec_distillation.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/ch_PP-OCRv2/ch_PP-OCRv2_rec_enhanced_ctc_loss.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/ch_PP-OCRv2/ch_PP-OCRv2_rec_enhanced_ctc_loss.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/ch_ppocr_v2.0/rec_chinese_common_train_v2.0.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/ch_ppocr_v2.0/rec_chinese_common_train_v2.0.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/ch_ppocr_v2.0/rec_chinese_lite_train_v2.0.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/ch_ppocr_v2.0/rec_chinese_lite_train_v2.0.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/generate_multi_language_configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/generate_multi_language_configs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_arabic_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_arabic_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_cyrillic_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_cyrillic_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_devanagari_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_devanagari_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_en_number_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_en_number_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_french_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_french_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_german_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_german_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_japan_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_japan_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_korean_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_korean_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_latin_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_latin_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/multi_language/rec_multi_language_lite_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/multi_language/rec_multi_language_lite_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_d28_can.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_d28_can.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_efficientb3_fpn_pren.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_efficientb3_fpn_pren.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_icdar15_train.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_icdar15_train.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_mtb_nrtr.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_mtb_nrtr.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_mv3_none_bilstm_ctc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_mv3_none_bilstm_ctc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_mv3_none_none_ctc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_mv3_none_none_ctc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_mv3_tps_bilstm_att.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_mv3_tps_bilstm_att.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_mv3_tps_bilstm_ctc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_mv3_tps_bilstm_ctc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r31_robustscanner.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r31_robustscanner.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r31_sar.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r31_sar.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r32_gaspin_bilstm_att.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r32_gaspin_bilstm_att.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r34_vd_none_bilstm_ctc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r34_vd_none_bilstm_ctc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r34_vd_none_none_ctc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r34_vd_none_none_ctc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r34_vd_tps_bilstm_att.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r34_vd_tps_bilstm_att.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r34_vd_tps_bilstm_ctc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r34_vd_tps_bilstm_ctc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r45_abinet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r45_abinet.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r45_visionlan.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r45_visionlan.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_r50_fpn_srn.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_r50_fpn_srn.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_resnet_rfl_att.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_resnet_rfl_att.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_resnet_rfl_visual.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_resnet_rfl_visual.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_resnet_stn_bilstm_att.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_resnet_stn_bilstm_att.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_svtrnet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_svtrnet.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_svtrnet_ch.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_svtrnet_ch.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/rec/rec_vitstr_none_ce.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/rec_vitstr_none_ce.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/sr/sr_telescope.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/sr/sr_telescope.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/sr/sr_tsrn_transformer_strock.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/sr/sr_tsrn_transformer_strock.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/table/SLANet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/table/SLANet.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/table/SLANet_ch.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/table/SLANet_ch.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/table/table_master.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/table/table_master.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/configs/table/table_mv3.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/table/table_mv3.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/doc/fonts/font-times-new-roman.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/doc/fonts/font-times-new-roman.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/doc/fonts/latin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/doc/fonts/latin.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/doc/fonts/simfang.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/doc/fonts/simfang.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/paddleocr.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/paddleocr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/collate_fn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/collate_fn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/ColorJitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/ColorJitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/abinet_aug.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/abinet_aug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/copy_paste.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/copy_paste.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/ct_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/ct_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/drrg_targets.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/drrg_targets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/east_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/east_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/fce_aug.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/fce_aug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/fce_targets.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/fce_targets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/iaa_augment.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/iaa_augment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/label_ops.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/label_ops.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/make_border_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/make_border_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/make_pse_gt.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/make_pse_gt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/make_shrink_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/make_shrink_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/operators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/pg_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/pg_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/randaugment.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/randaugment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/random_crop_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/random_crop_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/rec_img_aug.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/rec_img_aug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/sast_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/sast_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/ssl_img_aug.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/ssl_img_aug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/table_ops.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/table_ops.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/text_image_aug/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/text_image_aug/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/text_image_aug/augment.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/text_image_aug/augment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/text_image_aug/warp_mls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/text_image_aug/warp_mls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/vqa/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/vqa/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/vqa/augment.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/vqa/augment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/vqa/token/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/vqa/token/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/vqa/token/vqa_re_convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/vqa/token/vqa_re_convert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/vqa/token/vqa_token_chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/vqa/token/vqa_token_chunk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/vqa/token/vqa_token_pad.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/vqa/token/vqa_token_pad.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/imaug/vqa/token/vqa_token_relation.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/imaug/vqa/token/vqa_token_relation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/lmdb_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/lmdb_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/pgnet_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/pgnet_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/pubtab_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/pubtab_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/data/simple_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/data/simple_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/ext_op/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/ext_op/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/ext_op/roi_align_rotated/roi_align_rotated.cc" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/ext_op/roi_align_rotated/roi_align_rotated.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/ext_op/roi_align_rotated/roi_align_rotated.cu" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/ext_op/roi_align_rotated/roi_align_rotated.cu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/ext_op/roi_align_rotated/roi_align_rotated.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/ext_op/roi_align_rotated/roi_align_rotated.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/cls_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/cls_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/ct_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/ct_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/det_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/det_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/distillation_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/distillation_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/e2e_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/e2e_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/eval_det_iou.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/eval_det_iou.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/kie_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/kie_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/rec_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/rec_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/sr_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/sr_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/table_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/table_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/vqa_token_re_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/vqa_token_re_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/metrics/vqa_token_ser_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/metrics/vqa_token_ser_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/architectures/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/architectures/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/architectures/base_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/architectures/base_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/architectures/distillation_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/architectures/distillation_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/det_mobilenet_v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/det_mobilenet_v3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/det_pp_lcnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/det_pp_lcnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/det_resnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/det_resnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/det_resnet_vd.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/det_resnet_vd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/det_resnet_vd_sast.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/det_resnet_vd_sast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/e2e_resnet_vd_pg.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/e2e_resnet_vd_pg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/kie_unet_sdmgr.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/kie_unet_sdmgr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_densenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_densenet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_efficientb3_pren.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_efficientb3_pren.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_micronet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_micronet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_mobilenet_v3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_mobilenet_v3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_mv1_enhance.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_mv1_enhance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_nrtr_mtb.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_nrtr_mtb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_31.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_31.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_32.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_32.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_45.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_45.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_aster.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_aster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_rfl.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_rfl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_vd.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_resnet_vd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_svtrnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_svtrnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/rec_vitstr.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/rec_vitstr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/table_master_resnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/table_master_resnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/backbones/vqa_layoutlm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/backbones/vqa_layoutlm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/cls_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/cls_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/det_ct_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/det_ct_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/det_db_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/det_db_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/det_drrg_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/det_drrg_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/det_east_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/det_east_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/det_fce_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/det_fce_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/det_pse_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/det_pse_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/det_sast_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/det_sast_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/e2e_pg_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/e2e_pg_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/gcn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/gcn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/kie_sdmgr_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/kie_sdmgr_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/local_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/local_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/proposal_local_graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/proposal_local_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_abinet_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_abinet_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_aster_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_aster_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_att_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_att_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_can_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_can_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_ctc_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_ctc_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_multi_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_multi_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_nrtr_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_nrtr_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_pren_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_pren_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_rfl_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_rfl_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_robustscanner_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_robustscanner_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_sar_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_sar_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_spin_att_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_spin_att_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_srn_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_srn_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/rec_visionlan_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/rec_visionlan_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/self_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/self_attention.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/sr_rensnet_transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/sr_rensnet_transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/table_att_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/table_att_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/heads/table_master_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/heads/table_master_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/csp_pan.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/csp_pan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/ct_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/ct_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/db_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/db_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/east_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/east_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/fce_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/fce_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/fpn_unet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/fpn_unet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/pg_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/pg_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/pren_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/pren_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/rf_adaptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/rf_adaptor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/rnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/rnn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/sast_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/sast_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/necks/table_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/necks/table_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/transforms/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/transforms/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/transforms/gaspin_transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/transforms/gaspin_transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/transforms/stn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/transforms/stn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/transforms/tbsrn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/transforms/tbsrn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/transforms/tps.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/transforms/tps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/transforms/tps_spatial_transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/transforms/tps_spatial_transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/modeling/transforms/tsrn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/modeling/transforms/tsrn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/optimizer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/optimizer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/optimizer/learning_rate.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/optimizer/learning_rate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/optimizer/lr_scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/optimizer/lr_scheduler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/optimizer/optimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/optimizer/optimizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/optimizer/regularizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/optimizer/regularizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/cls_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/cls_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/ct_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/ct_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/db_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/db_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/drrg_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/drrg_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/east_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/east_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/fce_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/fce_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/locality_aware_nms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/locality_aware_nms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/pg_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/pg_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/picodet_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/picodet_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/pse_postprocess/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/pse_postprocess/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse/pse.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse/pse.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/pse_postprocess/pse_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/rec_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/rec_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/sast_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/sast_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/table_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/table_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/vqa_token_re_layoutlm_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/vqa_token_re_layoutlm_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/postprocess/vqa_token_ser_layoutlm_postprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/postprocess/vqa_token_ser_layoutlm_postprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/EN_symbol_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/EN_symbol_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/ar_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/ar_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/arabic_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/arabic_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/be_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/be_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/bg_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/bg_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/chinese_cht_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/chinese_cht_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/confuse.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/confuse.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/cyrillic_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/cyrillic_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/devanagari_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/devanagari_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/en_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/en_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/fa_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/fa_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/french_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/french_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/german_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/german_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/hi_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/hi_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/it_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/it_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/japan_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/japan_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/ka_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/ka_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/kie_dict/xfund_class_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/kie_dict/xfund_class_list.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/korean_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/korean_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/latex_symbol_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/latex_symbol_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/latin_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/latin_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/layout_dict/layout_cdla_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/layout_dict/layout_cdla_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/layout_dict/layout_publaynet_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/layout_dict/layout_publaynet_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/layout_dict/layout_table_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/layout_dict/layout_table_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/mr_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/mr_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/ne_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/ne_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/oc_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/oc_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/pu_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/pu_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/rs_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/rs_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/rsc_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/rsc_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/ru_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/ru_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/spin_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/spin_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/ta_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/ta_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/table_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/table_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/table_master_structure_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/table_master_structure_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/table_structure_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/table_structure_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/table_structure_dict_ch.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/table_structure_dict_ch.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/te_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/te_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/ug_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/ug_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/uk_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/uk_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/ur_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/ur_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/vi_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/vi_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict/xi_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict/xi_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/dict90.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/dict90.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/e2e_metric/Deteval.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/e2e_metric/Deteval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/e2e_metric/polygon_fast.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/e2e_metric/polygon_fast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/e2e_utils/extract_batchsize.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/e2e_utils/extract_batchsize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/e2e_utils/extract_textpoint_fast.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/e2e_utils/extract_textpoint_fast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/e2e_utils/extract_textpoint_slow.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/e2e_utils/extract_textpoint_slow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/e2e_utils/pgnet_pp_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/e2e_utils/pgnet_pp_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/e2e_utils/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/e2e_utils/visual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/en_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/en_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/gen_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/gen_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/ic15_dict.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/ic15_dict.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/iou.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/iou.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/loggers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/loggers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/loggers/base_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/loggers/base_logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/loggers/loggers.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/loggers/loggers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/loggers/vdl_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/loggers/vdl_logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/loggers/wandb_logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/loggers/wandb_logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/poly_nms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/poly_nms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/ppocr_keys_v1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/ppocr_keys_v1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/profiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/profiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/save_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/save_load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppocr/utils/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppocr/utils/visual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/README_ch.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/README_ch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/README_ch.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/README_ch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/how_to_do_kie.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/how_to_do_kie.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/how_to_do_kie_en.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/how_to_do_kie_en.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/predict_kie_token_ser.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/predict_kie_token_ser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/predict_kie_token_ser_re.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/predict_kie_token_ser_re.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/tools/eval_with_label_end2end.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/tools/eval_with_label_end2end.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/tools/trans_funsd_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/tools/trans_funsd_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/kie/tools/trans_xfun_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/kie/tools/trans_xfun_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/layout/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/layout/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/layout/README_ch.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/layout/README_ch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/layout/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/layout/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/layout/predict_layout.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/layout/predict_layout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/pdf2word/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/pdf2word/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/pdf2word/icons/chinese.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/pdf2word/icons/chinese.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/pdf2word/icons/english.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/pdf2word/icons/english.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/pdf2word/icons/folder-open.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/pdf2word/icons/folder-open.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/pdf2word/icons/folder-plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/pdf2word/icons/folder-plus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/pdf2word/pdf2word.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/pdf2word/pdf2word.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/predict_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/predict_system.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/recovery/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/recovery/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/recovery/README_ch.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/recovery/README_ch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/recovery/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/recovery/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/recovery/recovery_to_doc.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/recovery/recovery_to_doc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/recovery/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/recovery/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/recovery/table_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/recovery/table_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/README_ch.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/README_ch.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/convert_label2html.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/convert_label2html.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/eval_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/eval_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/matcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/matcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/predict_structure.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/predict_structure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/predict_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/predict_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/table_master_match.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/table_master_match.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/table_metric/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/table_metric/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/table_metric/parallel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/table_metric/parallel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/table_metric/table_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/table_metric/table_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/tablepyxl/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/tablepyxl/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/tablepyxl/style.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/tablepyxl/style.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/table/tablepyxl/tablepyxl.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/table/tablepyxl/tablepyxl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/ppstructure/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/ppstructure/utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/end2end/convert_ppocr_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/end2end/convert_ppocr_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/end2end/draw_html.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/end2end/draw_html.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/end2end/eval_end2end.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/end2end/eval_end2end.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/end2end/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/end2end/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/export_center.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/export_center.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/export_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/export_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer/predict_cls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer/predict_cls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer/predict_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer/predict_det.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer/predict_e2e.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer/predict_e2e.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer/predict_rec.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer/predict_rec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer/predict_sr.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer/predict_sr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer/predict_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer/predict_system.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer/utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_cls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_cls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_det.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_e2e.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_e2e.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_kie.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_kie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_kie_token_ser.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_kie_token_ser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_kie_token_ser_re.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_kie_token_ser_re.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_rec.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_rec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_sr.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_sr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/infer_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/infer_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/program.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/test_hubserving.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/test_hubserving.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/PaddleOCR/tools/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/tools/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/PaddleOCR/configs/rec/PP-OCRv3/multi_language/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/TableExtractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/TableExtractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/TableLinesRemover.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/TableLinesRemover.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/100-cp.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/100-cp.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/108-cp.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/108-cp.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/1113-BGDĐT_bac_lieu.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/1113-BGDĐT_bac_lieu.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/1128-ttg-dmdn.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/1128-ttg-dmdn.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/19.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/19.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/199-qh15.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/199-qh15.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/20-CV-BCĐ_1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/20-CV-BCĐ_1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/2126 - BGDĐT -KHCNMT.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/2126 - BGDĐT -KHCNMT.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/248-tb.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/248-tb.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/968-ttg.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/968-ttg.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/981-ttg.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/981-ttg.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/984-ttg.signed.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/984-ttg.signed.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/Phu_luc_cac_truong_xet_tuyen_sinh_VB2_DH_CSND.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/Phu_luc_cac_truong_xet_tuyen_sinh_VB2_DH_CSND.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/VanBanGoc_122.2024.NQ.HDND.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/VanBanGoc_122.2024.NQ.HDND.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/VanBanGoc_28. TT 28 sdbs TT EVFTA_0001.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/VanBanGoc_28. TT 28 sdbs TT EVFTA_0001.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/VanBanGoc_29. TT 29 sdbs TT RCEP_0001.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/VanBanGoc_29. TT 29 sdbs TT RCEP_0001.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/VanBanGoc_30. TT 30 sdbs TT CPTPP_0001.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/VanBanGoc_30. TT 30 sdbs TT CPTPP_0001.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/VanBanGoc_92.2025.NĐ-CP.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/VanBanGoc_92.2025.NĐ-CP.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/VanBanGoc_ND 100_8.5.25_Sua doi bo sung Dieu 15 ND56.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/VanBanGoc_ND 100_8.5.25_Sua doi bo sung Dieu 15 ND56.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/VanBanGoc_Nghị định 89.2025.NĐ-CP.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/VanBanGoc_Nghị định 89.2025.NĐ-CP.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/VanBanGoc_Thông tư 61.2024.TT-BGTVT.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/VanBanGoc_Thông tư 61.2024.TT-BGTVT.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/XNDH.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/XNDH.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/docs/cong-van-4040-hdndh-trung-hoc_199202182919.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/docs/cong-van-4040-hdndh-trung-hoc_199202182919.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/document-process-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/document-process-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/extractTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/extractTable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/gemini_nomalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/gemini_nomalizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/kafka_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/kafka_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_11.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_12.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_13.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_14.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_15.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_16.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_17.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_18.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_19.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/cell_9.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/cell_9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/table_detected.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/table_detected.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/output/table_extraction/table_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/output/table_extraction/table_text.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/predict.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/predict.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/ocr_table_tool/0_dilated_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/ocr_table_tool/0_dilated_image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/ocr_table_tool/1_contours.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/ocr_table_tool/1_contours.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/ocr_table_tool/2_bounding_boxes.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/ocr_table_tool/2_bounding_boxes.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/0_original.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/0_original.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/10_perspective_corrected.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/10_perspective_corrected.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/11_perspective_corrected_with_padding.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/11_perspective_corrected_with_padding.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/11_perspective_corrected_with_padding.json" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/11_perspective_corrected_with_padding.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/11_perspective_corrected_with_padding_contour.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/11_perspective_corrected_with_padding_contour.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/1_grayscaled.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/1_grayscaled.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/3_thresholded.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/3_thresholded.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/4_inverteded.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/4_inverteded.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/5_dialateded.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/5_dialateded.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/6_all_contours.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/6_all_contours.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/7_only_rectangular_contours.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/7_only_rectangular_contours.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/8_contour_with_max_area.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/8_contour_with_max_area.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_extractor/9_with_4_corner_points_plotted.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_extractor/9_with_4_corner_points_plotted.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/0_grayscaled.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/0_grayscaled.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/1_thresholded.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/1_thresholded.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/2_inverted.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/2_inverted.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/3_erode_vertical_lines.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/3_erode_vertical_lines.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/4.1_detected_lines.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/4.1_detected_lines.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/4_erode_horizontal_lines.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/4_erode_horizontal_lines.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/5_combined_eroded_images.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/5_combined_eroded_images.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/6_dilated_combined_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/6_dilated_combined_image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/7_image_without_lines.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/7_image_without_lines.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/process_images/table_lines_remover/8_image_without_lines_noise_removed.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/process_images/table_lines_remover/8_image_without_lines_noise_removed.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/XNDH.json" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/XNDH.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/XNDH.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/XNDH.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/XNDH_contour.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/XNDH_contour.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/devan2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/devan2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/devan4.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/devan4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/devan5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/devan5.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/devan7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/devan7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/devanclean2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/devanclean2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/devanclearn.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/devanclearn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/doanvan1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/doanvan1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/kindle_english.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/kindle_english.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/samples/test2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/samples/test2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/table_extraction_demo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/table_extraction_demo.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/table_ocr.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/table_ocr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/config/base.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/config/base.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/config/resnet-transformer.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/config/resnet-transformer.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/config/resnet_fpn_transformer.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/config/resnet_fpn_transformer.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/config/vgg-convseq2seq.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/config/vgg-convseq2seq.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/config/vgg-seq2seq.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/config/vgg-seq2seq.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/config/vgg-transformer.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/config/vgg-transformer.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/loader/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/loader/aug.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/loader/aug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/loader/dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/loader/dataloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/loader/dataloader_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/loader/dataloader_v1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/loader/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/backbone/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/backbone/cnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/backbone/cnn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/backbone/resnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/backbone/resnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/backbone/vgg.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/backbone/vgg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/beam.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/beam.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/seqmodel/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/backbone/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/seqmodel/convseq2seq.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/seqmodel/convseq2seq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/seqmodel/seq2seq.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/seqmodel/seq2seq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/seqmodel/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/seqmodel/transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/transformerocr.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/transformerocr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/model/vocab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/vocab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/optim/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/model/seqmodel/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/optim/labelsmoothingloss.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/optim/labelsmoothingloss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/optim/optim.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/optim/optim.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/tool/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/optim/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/tool/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/tool/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/tool/create_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/tool/create_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/tool/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/tool/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/tool/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/tool/predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/tool/translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/tool/translate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-process-service/vietocr/vietocr/tool/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr-service/vietocr/vietocr/tool/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/DocumentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/DocumentServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/ElasticSearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/config/ElasticSearchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/controller/ChatbotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/controller/ChatbotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/controller/DocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/dto/ChatbotRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/dto/ChatbotRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/dto/ChatbotResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/dto/ChatbotResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/dto/DocumentDataDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/dto/DocumentDataDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/dto/DocumentLinkDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/dto/DocumentLinkDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/dto/DocumentSuggestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/dto/DocumentSuggestResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/enums/PermissionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/enums/PermissionEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/exception/ApiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/exception/ApiException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/exception/DocumentNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/exception/DocumentNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/exception/DocumentProcessingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/exception/DocumentProcessingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/exception/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/exception/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/kafka/KafkaConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/kafka/KafkaConsumerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/kafka/KafkaProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/kafka/KafkaProducerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/model/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/model/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/repository/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/repository/DocumentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/ChatbotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/service/ChatbotService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/service/DocumentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/java/com/rs/documentservice/util/ESUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/java/com/rs/documentservice/util/ESUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/document-service/src/test/java/com/rs/documentservice/DocumentServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/src/test/java/com/rs/documentservice/DocumentServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/metadata-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/java/com/rs/eurekaserver/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/main/java/com/rs/eurekaserver/EurekaServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/test/java/com/rs/eurekaserver/EurekaServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/src/test/java/com/rs/eurekaserver/EurekaServerApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/DocumentDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/DocumentDetail.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Documents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Documents.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/pdfConfig.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/pdfConfig.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-topics-summary.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +627,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -64,76 +641,38 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2u2e5MTT6n59Z16S53xM8gw1bVh" />
+  <component name="ProjectId" id="2yqxPP7pbAUvuVBBy1TtQ0Buaxg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Maven.PDFMiner [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.config-server [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.document-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.eureka-server [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.gateway [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.storage-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.user-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.user-service [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Python.document-processing-service.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AuthenticationServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DocumentServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PdfMinerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.StorageServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15429688&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37572256&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/buidokhoinguyen/Desktop/PDFMiner-microservice/frontend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mongo&quot;,
-      &quot;postgresql&quot;
-    ]
   }
 }</component>
-  <component name="ReactorSettings">
-    <option name="notificationShown" value="true" />
-  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.rs.gateway.util" />
-      <recent name="com.rs.gateway.filter" />
+      <recent name="$PROJECT_DIR$/infrastructure" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -141,37 +680,12 @@
       <set>
         <option value="KtorApplicationConfigurationType" />
         <option value="MicronautRunConfigurationType" />
-        <option value="PythonConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Python.document-processing-service">
-    <configuration name="document-processing-service" type="PythonConfigurationType" factoryName="Python">
-      <module name="PDFMiner-microservice" />
-      <option name="ENV_FILES" value="/Library/Frameworks/Python.framework/Versions/3.12/bin/python3.12" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/document-process-service" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="uvicorn" />
-      <option name="PARAMETERS" value="-m uvicorn server:app --reload" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="true" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.configserver.ConfigServerApplication" />
@@ -180,14 +694,14 @@
       </method>
     </configuration>
     <configuration name="DocumentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="document-service" />
+      <module name="metadata-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.documentservice.DocumentServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="eureka-server" />
+      <module name="discovery-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.eurekaserver.EurekaServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,6 +714,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NotificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="notification-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.notificationservice.NotificationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StorageServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="storage-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.storageservice.StorageServiceApplication" />
@@ -208,21 +730,13 @@
       </method>
     </configuration>
     <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="user-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rs.userservice.UserServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Python.document-processing-service" />
-      <item itemvalue="Spring Boot.ConfigServerApplication" />
-      <item itemvalue="Spring Boot.EurekaServerApplication" />
-      <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="Spring Boot.UserServiceApplication" />
-      <item itemvalue="Spring Boot.DocumentServiceApplication" />
-      <item itemvalue="Spring Boot.StorageServiceApplication" />
-    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -232,63 +746,21 @@
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SpringProfilesService">
-    <option name="activeProfiles">
-      <map>
-        <entry key="config-server" value="config-server" />
-      </map>
-    </option>
-  </component>
-  <component name="StructureViewState">
-    <option name="selectedTab" value="Logical" />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c151971e-6456-4353-8d22-35d5a4bbb44b" name="Changes" comment="" />
-      <created>1741450911420</created>
+      <changelist id="9646c40e-4d66-4007-b7b8-f6419e4d2bf4" name="Changes" comment="" />
+      <created>1750575881546</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1741450911420</updated>
-      <workItem from="1741450912450" duration="968000" />
-      <workItem from="1742137869248" duration="5825000" />
-      <workItem from="1742400833770" duration="3183000" />
-      <workItem from="1743039937073" duration="13085000" />
-      <workItem from="1743307436109" duration="14109000" />
-      <workItem from="1743350783482" duration="43027000" />
-      <workItem from="1743529749026" duration="20554000" />
-      <workItem from="1743604475591" duration="213000" />
-      <workItem from="1743605206799" duration="97000" />
-      <workItem from="1744189465197" duration="564000" />
-      <workItem from="1744210388214" duration="52000" />
-      <workItem from="1744210447478" duration="66000" />
-      <workItem from="1744210520530" duration="136000" />
-      <workItem from="1744210666758" duration="122000" />
-      <workItem from="1744210916577" duration="8000" />
-      <workItem from="1744210941240" duration="3919000" />
-      <workItem from="1744215908369" duration="7218000" />
-      <workItem from="1744268226321" duration="9851000" />
-      <workItem from="1745161964372" duration="26653000" />
-      <workItem from="1745221475657" duration="5490000" />
-      <workItem from="1745571671462" duration="33000" />
-      <workItem from="1746890785028" duration="8000" />
-      <workItem from="1747756638607" duration="38920000" />
-      <workItem from="1747894114663" duration="25037000" />
-      <workItem from="1747992688273" duration="1946000" />
-      <workItem from="1748006488486" duration="5714000" />
+      <updated>1750575881546</updated>
+      <workItem from="1750575883045" duration="1840000" />
+      <workItem from="1750577878221" duration="7743000" />
+      <workItem from="1750738164210" duration="160000" />
+      <workItem from="1750738332894" duration="7226000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/PDFMiner-backend" />
-    </ignored-roots>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
