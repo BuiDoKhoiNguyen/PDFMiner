@@ -1,177 +1,573 @@
-# PDFMiner Microservice Architecture
+# PDFMiner - Hệ Thống Microservice Xử Lý Tài Liệu Thông Minh
 
-Hệ thống microservice để xử lý, phân tích và tìm kiếm documents với vector embeddings và AI-powered search.
+Hệ thống microservice để quản lý, xử lý, phân tích tài liệu PDF với khả năng OCR, tìm kiếm nâng cao và AI-powered document processing.
 
 ## 🏗️ Kiến trúc tổng quan
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Gateway       │    │ Discovery       │    │ Config Server   │
-│   (Port 8080)   │    │ Service         │    │ (Port 8888)     │
-│                 │    │ (Port 8761)     │    │                 │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         └───────────────────────┼───────────────────────┘
-                                 │
-    ┌────────────────────────────┼────────────────────────────┐
-    │                            │                            │
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│ User Service    │    │ Metadata        │    │ Storage         │
-│ (Port 8081)     │    │ Service         │    │ Service         │
-│                 │    │ (Port 8082)     │    │ (Port 8084)     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         └───────────────────────┼───────────────────────┘
-                                 │
-    ┌────────────────────────────┼────────────────────────────┐
-    │                            │                            │
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│ Notification    │    │ Embedding       │    │ Audit Service   │
-│ Service         │    │ Service         │    │                 │
-│ (Port 8085)     │    │ (Port 8083)     │    │                 │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │
-         └───────────────────────┘
-                 │
-        ┌─────────────────┐
-        │ External        │
-        │ Dependencies    │
-        │                 │
-        │ • Kafka         │
-        │ • Zilliz Cloud  │
-        │ • PostgreSQL    │
-        │ • Redis         │
-        └─────────────────┘
+                            ┌─────────────────────┐
+                            │   Config Server     │
+                            │   (Port 8888)       │
+                            └──────────┬──────────┘
+                                       │
+                            ┌──────────▼──────────┐
+                            │ Discovery Service   │
+                            │   (Eureka 8761)     │
+                            └──────────┬──────────┘
+                                       │
+┌──────────────────────────────────────┼──────────────────────────────────────┐
+│                                      │                                      │
+│  ┌───────────────────────────────────▼────────────────────────────────┐   │
+│  │                         Gateway (Port 8080)                         │   │
+│  │                    Spring Cloud Gateway + JWT                       │   │
+│  └───────────────────────────────────┬────────────────────────────────┘   │
+│                                      │                                      │
+│  ┌───────────────────┬───────────────┼───────────────┬──────────────────┐ │
+│  │                   │               │               │                  │ │
+│  ▼                   ▼               ▼               ▼                  ▼ │
+│ ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐
+│ │   User     │ │  Document  │ │  Storage   │ │ Processing │ │   WebApp   │
+│ │  Service   │ │  Service   │ │  Service   │ │  Service   │ │  (React)   │
+│ │ Port 8081  │ │ Port 8082  │ │ Port 8084  │ │  (Python)  │ │  (Vite)    │
+│ └─────┬──────┘ └─────┬──────┘ └─────┬──────┘ └─────┬──────┘ └────────────┘
+│       │              │              │              │
+│       │   MongoDB    │ Elasticsearch│   AWS S3     │   Kafka
+│       └──────────────┴──────────────┴──────────────┴────────────────────┐
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+                                     │
+                          ┌──────────▼──────────┐
+                          │  Infrastructure     │
+                          │  • Kafka/Zookeeper  │
+                          │  • Elasticsearch    │
+                          │  • Kibana           │
+                          └─────────────────────┘
 ```
 
-## 📦 Services
+## 📦 Các Service
 
-### Core Services (Java/Spring Boot)
+### Core Services (Java/Spring Boot 3.4.4)
 
-| Service | Port | Description | Technology |
-|---------|------|-------------|------------|
-| **Gateway** | 8080 | API Gateway & Load Balancer | Spring Cloud Gateway |
-| **Discovery** | 8761 | Service Registry | Eureka Server |
-| **Config Server** | 8888 | Centralized Configuration | Spring Cloud Config |
-| **User Service** | 8081 | User Management & Authentication | Spring Boot + JWT |
-| **Metadata Service** | 8082 | Document Metadata & Search | Spring Boot + JPA |
-| **Storage Service** | 8084 | File Storage & Management | Spring Boot + MinIO |
-| **Notification Service** | 8085 | Email & Push Notifications | Spring Boot |
-| **Audit Service** | - | Activity Logging & Monitoring | Spring Boot |
+| Service | Port | Description | Technology Stack |
+|---------|------|-------------|------------------|
+| **Config Server** | 8888 | Quản lý cấu hình tập trung | Spring Cloud Config |
+| **Discovery Service** | 8761 | Service Registry & Discovery | Netflix Eureka Server |
+| **Gateway** | 8080 | API Gateway, Routing, JWT Auth | Spring Cloud Gateway + WebFlux |
+| **User Service** | 8081 | Quản lý người dùng & xác thực | Spring Boot + MongoDB + JWT |
+| **Document Service** | 8082 | Quản lý metadata tài liệu & tìm kiếm | Spring Boot + Elasticsearch + Kafka |
+| **Storage Service** | 8084 | Lưu trữ và quản lý file PDF | Spring Boot + AWS S3 + JWT |
 
 ### AI/ML Services (Python)
 
-| Service | Port | Description | Technology |
-|---------|------|-------------|------------|
-| **Embedding Service** | 8083 | Vector Embeddings & Similarity Search | Python + FastAPI + Zilliz Cloud |
-| **OCR Service** | - | Document Text Extraction | Python + PaddleOCR + VietOCR |
+| Service | Description | Technology Stack |
+|---------|-------------|------------------|
+| **Processing Service** | OCR, Table Extraction, Document Processing | Python + PaddleOCR + VietOCR + FastAPI + Kafka |
+
+### Frontend (React + TypeScript)
+
+| Service | Port | Description | Technology Stack |
+|---------|------|-------------|------------------|
+| **WebApp** | 5173 | Giao diện người dùng | React 19 + TypeScript + Vite + Ant Design + Material-UI |
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - **Java 17+**
-- **Maven 3.8+**
+- **Maven 3.9+**
+- **Node.js 18+** & **npm/yarn**
 - **Python 3.9+**
 - **Docker & Docker Compose**
-- **PostgreSQL**
-- **Redis**
-- **Kafka**
+- **MongoDB** (cho User Service)
+- **Elasticsearch 7.17+** (cho Document Service)
+- **AWS S3** (hoặc S3-compatible storage cho Storage Service)
 
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
-cd PDFMiner-microservice
+git clone https://github.com/BuiDoKhoiNguyen/PDFMiner.git
+cd PDFMiner
 ```
 
 ### 2. Start Infrastructure Services
 
 ```bash
-# Start PostgreSQL, Redis, Kafka
-docker-compose -f infrastructure/docker-compose.yml up -d
+# Start Kafka, Zookeeper, Elasticsearch, Kibana
+cd infrastructure
+docker-compose up -d
+
+# Verify services are running
+docker-compose ps
 ```
 
-### 3. Start Core Services
+**Services started:**
+- Zookeeper: `localhost:2181`
+- Kafka: `localhost:9092`
+- Kafka UI: `localhost:8386`
+- Elasticsearch: `localhost:9200`
+- Kibana: `localhost:5601`
+
+### 3. Start Core Services (Java)
+
+#### 3.1. Build All Services
 
 ```bash
-# Build all Java services
-mvn clean compile
-
-# Start Config Server (first)
-cd config-server && mvn spring-boot:run &
-
-# Start Discovery Service
-cd discovery-service && mvn spring-boot:run &
-
-# Start other services
-cd gateway && mvn spring-boot:run &
-cd user-service && mvn spring-boot:run &
-cd metadata-service && mvn spring-boot:run &
-cd storage-service && mvn spring-boot:run &
-cd notification-service && mvn spring-boot:run &
+# Build từ root project
+mvn clean install -DskipTests
 ```
 
-### 4. Start AI/ML Services
+#### 3.2. Start Services (theo thứ tự)
+
+**Bước 1: Start Config Server (bắt buộc chạy đầu tiên)**
+```bash
+cd config-server
+mvn spring-boot:run
+```
+
+**Bước 2: Start Discovery Service**
+```bash
+cd discovery-service
+mvn spring-boot:run
+```
+
+**Bước 3: Start API Gateway**
+```bash
+cd gateway
+mvn spring-boot:run
+```
+
+**Bước 4: Start Business Services (có thể chạy song song)**
+```bash
+# Terminal 1 - User Service
+cd user-service
+mvn spring-boot:run
+
+# Terminal 2 - Document Service
+cd document-service
+mvn spring-boot:run
+
+# Terminal 3 - Storage Service
+cd storage-service
+mvn spring-boot:run
+```
+
+### 4. Start AI/ML Processing Service (Python)
 
 ```bash
-# Embedding Service
-cd embedding-service
+cd processing-service
+
+# Cài đặt dependencies
+pip install -r requirements.txt
+
+# Start service
 chmod +x start.sh
 ./start.sh
 
-# OCR Service
-cd ocr-service
+# Hoặc chạy trực tiếp
 python server.py
 ```
 
-### 5. Access Services
+### 5. Start Frontend WebApp
 
-- **API Gateway**: http://localhost:8080
-- **Discovery Dashboard**: http://localhost:8761
-- **Embedding Service**: http://localhost:8083
-- **Health Checks**: http://localhost:8080/actuator/health
+```bash
+cd webapp
+
+# Cài đặt dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### 6. Access Services
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| **WebApp** | http://localhost:5173 | Giao diện người dùng |
+| **API Gateway** | http://localhost:8080 | API Gateway |
+| **Eureka Dashboard** | http://localhost:8761 | Service Registry Dashboard |
+| **Kafka UI** | http://localhost:8386 | Kafka Management UI |
+| **Kibana** | http://localhost:5601 | Elasticsearch Dashboard |
+| **Elasticsearch** | http://localhost:9200 | Elasticsearch API |
 
 ## 🔧 Configuration
 
+### Cấu hình tập trung (Config Server)
+
+Các file cấu hình được quản lý tập trung tại thư mục `config/`:
+
+```
+config/
+├── application.properties        # Cấu hình chung
+├── document-service.yml         # Document Service config
+├── eureka-server.yml            # Discovery Service config
+├── gateway.yml                  # Gateway config
+├── storage-service.yml          # Storage Service config
+└── user-service.yml             # User Service config
+```
+
 ### Environment Variables
 
-Create `.env` files in each service directory:
+Tạo file `.env` hoặc cấu hình biến môi trường:
 
 ```bash
-# Database
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=pdfminer
-DB_USERNAME=postgres
-DB_PASSWORD=password
+# MongoDB (User Service)
+MONGODB_URI=mongodb://localhost:27017/pdfminer
+MONGODB_DATABASE=pdfminer
 
-# Redis
-REDIS_HOST=localhost
-REDIS_PORT=6379
+# Elasticsearch (Document Service)
+ELASTICSEARCH_HOST=localhost
+ELASTICSEARCH_PORT=9200
+
+# AWS S3 (Storage Service)
+AWS_ACCESS_KEY_ID=your_access_key
+AWS_SECRET_ACCESS_KEY=your_secret_key
+AWS_REGION=ap-southeast-1
+AWS_S3_BUCKET=pdfminer-storage
 
 # Kafka
 KAFKA_BOOTSTRAP_SERVERS=localhost:9092
 
-# Zilliz Cloud (for Embedding Service)
-ZILLIZ_CLOUD_URI=your_zilliz_uri
-ZILLIZ_CLOUD_TOKEN=your_zilliz_token
+# JWT Secret
+JWT_SECRET=your_jwt_secret_key_here
+JWT_EXPIRATION=86400000
+
+# Google Gemini API (Document Service)
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-### Service Discovery
+## 🌟 Features
 
-Services tự động register với Eureka Server:
+### Core Features
 
-```yaml
+- ✅ **Quản lý người dùng**: Đăng ký, đăng nhập, phân quyền với JWT
+- ✅ **Upload & Storage**: Upload PDF files lên AWS S3
+- ✅ **Document Processing**: OCR tiếng Việt với PaddleOCR & VietOCR
+- ✅ **Table Extraction**: Trích xuất bảng từ PDF thành structured data
+- ✅ **Full-text Search**: Tìm kiếm nội dung tài liệu với Elasticsearch
+- ✅ **Metadata Management**: Quản lý metadata và indexing
+- ✅ **Real-time Processing**: Xử lý bất đồng bộ với Kafka
+
+### Advanced Features
+
+- 🔄 **Microservice Architecture**: Scalable và maintainable
+- 🔐 **Security**: JWT authentication & authorization
+- 📊 **Monitoring**: Service health checks & monitoring
+- 🚀 **Service Discovery**: Automatic service registration với Eureka
+- ⚙️ **Centralized Config**: Quản lý cấu hình tập trung
+- 🎯 **API Gateway**: Single entry point với routing thông minh
+
+## 📚 API Documentation
+
+### Authentication APIs (via Gateway)
+
+**Base URL**: `http://localhost:8080/api/users`
+
+```bash
+# Register
+POST /api/users/auth/register
+Content-Type: application/json
+{
+  "username": "user@example.com",
+  "password": "password123",
+  "fullName": "John Doe"
+}
+
+# Login
+POST /api/users/auth/login
+Content-Type: application/json
+{
+  "username": "user@example.com",
+  "password": "password123"
+}
+
+# Response
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIs...",
+  "tokenType": "Bearer"
+}
+```
+
+### Document APIs (via Gateway)
+
+**Base URL**: `http://localhost:8080/api/documents`
+
+```bash
+# Upload Document
+POST /api/storage/upload
+Authorization: Bearer {token}
+Content-Type: multipart/form-data
+file: [PDF file]
+
+# Search Documents
+GET /api/documents/search?query=keyword
+Authorization: Bearer {token}
+
+# Get Document Details
+GET /api/documents/{id}
+Authorization: Bearer {token}
+```
+
+## 🛠️ Technology Stack
+
+### Backend (Java)
+
+- **Spring Boot 3.4.4**
+- **Spring Cloud 2024.0.1**
+  - Spring Cloud Config
+  - Spring Cloud Gateway
+  - Netflix Eureka
+  - OpenFeign
+- **Spring Security + JWT**
+- **Spring Data MongoDB**
+- **Spring Data Elasticsearch**
+- **Spring Kafka**
+- **AWS SDK for S3**
+- **Lombok**
+- **ModelMapper**
+
+### AI/ML (Python)
+
+- **FastAPI** - Web framework
+- **PaddleOCR** - OCR engine
+- **VietOCR** - Vietnamese OCR
+- **Kafka-Python** - Kafka consumer/producer
+- **PyTorch** - Deep learning framework
+- **PIL/OpenCV** - Image processing
+- **pandas** - Data manipulation
+- **Google Generative AI** - AI-powered text processing
+
+### Frontend
+
+- **React 19**
+- **TypeScript**
+- **Vite** - Build tool
+- **Ant Design Pro Components**
+- **Material-UI**
+- **React Router DOM**
+- **Axios** - HTTP client
+- **TanStack Query** - Server state management
+- **JWT Decode**
+
+### Infrastructure
+
+- **Kafka + Zookeeper** - Message broker
+- **Elasticsearch 7.17** - Search engine
+- **Kibana 7.17** - Elasticsearch UI
+- **MongoDB** - User data storage
+- **AWS S3** - File storage
+- **Docker** - Containerization
+
+## 📂 Project Structure
+
+```
+PDFMiner/
+├── config/                          # Centralized configuration files
+│   ├── application.properties
+│   ├── document-service.yml
+│   ├── eureka-server.yml
+│   ├── gateway.yml
+│   ├── storage-service.yml
+│   └── user-service.yml
+├── config-server/                   # Spring Cloud Config Server
+├── discovery-service/               # Eureka Server
+├── gateway/                         # API Gateway
+├── user-service/                    # User management & authentication
+├── document-service/                # Document metadata & search
+├── storage-service/                 # File storage with AWS S3
+├── processing-service/              # Python AI/ML service
+│   ├── PaddleOCR/                  # OCR engine
+│   ├── vietocr/                    # Vietnamese OCR
+│   ├── kafka_consumer.py           # Kafka consumer
+│   ├── server.py                   # FastAPI server
+│   ├── table_ocr.py                # Table extraction
+│   └── requirements.txt
+├── webapp/                          # React frontend
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── infrastructure/                  # Docker compose files
+│   └── docker-compose.yml
+└── pom.xml                         # Parent POM
+```
+
+## 🔄 Data Flow
+
+### Upload & Process Document Flow
+
+```
+1. User uploads PDF via WebApp (React)
+   ↓
+2. Gateway routes to Storage Service
+   ↓
+3. Storage Service uploads to AWS S3
+   ↓
+4. Storage Service publishes event to Kafka
+   ↓
+5. Processing Service (Python) consumes event
+   ↓
+6. Processing Service performs OCR & Table Extraction
+   ↓
+7. Processing Service sends results to Document Service
+   ↓
+8. Document Service indexes to Elasticsearch
+   ↓
+9. WebApp displays processing status & results
+```
+
+### Search Flow
+
+```
+1. User searches from WebApp
+   ↓
+2. Gateway routes to Document Service
+   ↓
+3. Document Service queries Elasticsearch
+   ↓
+4. Results returned with metadata
+   ↓
+5. WebApp displays search results
+```
+
+## 🧪 Testing
+
+```bash
+# Test all Java services
+mvn test
+
+# Test specific service
+cd user-service
+mvn test
+
+# Test Python service
+cd processing-service
+pytest
+```
+
+## 📊 Monitoring & Health Checks
+
+### Service Health Endpoints
+
+```bash
+# Check all registered services
+curl http://localhost:8761/eureka/apps
+
+# Individual service health
+curl http://localhost:8081/actuator/health  # User Service
+curl http://localhost:8082/actuator/health  # Document Service
+curl http://localhost:8084/actuator/health  # Storage Service
+```
+
+### Kafka Monitoring
+
+Access Kafka UI: http://localhost:8386
+
+### Elasticsearch Monitoring
+
+Access Kibana: http://localhost:5601
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**1. Service không register với Eureka**
+```bash
+# Kiểm tra Eureka server đang chạy
+curl http://localhost:8761
+
+# Kiểm tra config trong application.yml
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 ```
 
-## 📋 API Documentation
+**2. Kafka connection refused**
+```bash
+# Kiểm tra Kafka đang chạy
+docker ps | grep kafka
 
-### Gateway Endpoints
+# Restart Kafka
+cd infrastructure
+docker-compose restart kafka
+```
+
+**3. Elasticsearch connection timeout**
+```bash
+# Kiểm tra Elasticsearch
+curl http://localhost:9200
+
+# Restart Elasticsearch
+docker-compose restart elasticsearch
+```
+
+**4. MongoDB connection error**
+```bash
+# Kiểm tra MongoDB đang chạy
+mongosh --eval "db.adminCommand('ping')"
+
+# Kiểm tra connection string trong config
+```
+
+## � Development Guide
+
+### Adding a New Service
+
+1. Create new Maven module
+2. Add to parent `pom.xml`
+3. Configure `bootstrap.yml` with Config Server
+4. Register with Eureka
+5. Add routing in Gateway
+6. Update documentation
+
+### Code Style
+
+- Follow Google Java Style Guide
+- Use Lombok for boilerplate code
+- Write meaningful commit messages
+- Add Javadoc for public APIs
+
+## 🚀 Deployment
+
+### Docker Deployment (Coming Soon)
+
+```bash
+# Build all services
+./build-all.sh
+
+# Deploy with Docker Compose
+docker-compose up -d
+```
+
+### Kubernetes Deployment (Coming Soon)
+
+```bash
+kubectl apply -f k8s/
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 👥 Team
+
+- **Bui Do Khoi Nguyen** - [@BuiDoKhoiNguyen](https://github.com/BuiDoKhoiNguyen)
+
+## 📞 Contact
+
+For questions or support, please open an issue on GitHub.
+
+---
+
+**Made with ❤️ by PDFMiner Team**
 
 ```bash
 # User Management
